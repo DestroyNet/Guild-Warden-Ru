@@ -88,38 +88,39 @@ function libGuildWarden.ClassFix(Class)
 		return nil;
 	end
 	Class = strlower(Class);
-	if (Class == strlower("Death Knight") or Class == strlower("DeathKnight")) then
-		return "Death Knight";
+	if (Class == strlower("Рыцарь смерти") or Class == strlower("Рыцарьсмерти")) then
+		return "Рыцарь смерти";
 	end	
-	if (Class == strlower("Druid")) then
-		return "Druid";
+	if (Class == strlower("Друид")) then
+		return "Друид";
 	end
-	if (Class == strlower("Priest")) then
-		return "Priest";
+	if (Class == strlower("Жрец") or Class == strlower("Жрица")) then
+		return "Жрец";
 	end
-	if (Class == strlower("Paladin")) then
-		return "Paladin";
+	if (Class == strlower("Паладин")) then
+		return "Паладин";
 	end
-	if (Class == strlower("Shaman")) then
-		return "Shaman";
+	if (Class == strlower("Шаман") or Class == strlower("Шаманка")) then
+		return "Шаман";
 	end
-	if (Class == strlower("Mage")) then
-		return "Mage";
+	if (Class == strlower("Маг")) then
+		return "Маг";
 	end
-	if (Class == strlower("Rogue")) then
-		return "Rogue";
+	if (Class == strlower("Разбойник") or Class == strlower("Разбойница")) then
+		return "Разбойник";
 	end
-	if (Class == strlower("Warrior")) then
-		return "Warrior";
+	if (Class == strlower("Воин")) then
+		return "Воин";
 	end	
-	if (Class == strlower("Warlock")) then
-		return "Warlock";
+	if (Class == strlower("Чернокнижник") or Class == strlower("Чернокнижница")) then
+		return "Чернокнижник";
 	end	
-	if (Class == strlower("Hunter")) then
-		return "Hunter";
+	if (Class == strlower("Охотник") or Class == strlower("Охотница")) then
+		return "Охотник";
 	end		
 	return nil;
 end
+
 function libGuildWarden.ReturnID(Name)
 	local UserInfo = libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name];
 	local ITSID = nil;
