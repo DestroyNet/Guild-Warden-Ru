@@ -1,0 +1,28 @@
+## Interface: 40300
+## Title: Guild Warden
+## Author: Codegreen(Freethemice) of Wildhammer
+## Version: 3.3.3
+## Notes: Guild Warden
+## URL: http://www.SloWGuild.com
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables:libGuildWardenSaveVar,MainMyID,Playerslist,libWardenGuildList,libWardenBannedGuildList,libWardenLeftGuildList,libWardenSavedVars1,libWardenLeftWarning,libWardenDataList,libWardenNoteList
+GuildWarden.lua
+GuildWarden_Setup.lua
+GuildWarden_Event.lua
+GuildWarden_ScrollLists.lua
+GuildWarden_GuildSharing.lua
+GuildWarden_Convertdata.lua
+GuildWarden_SimpleFunctions.lua
+GuildWardenTimer.xml
+GuildWardenMain.xml
+GuildWardenLeft.xml
+GuildWardenJoined.xml
+GuildWardenBanned.xml
+GuildWardenAlts.xml
+GuildWardenGiuldSharing.xml
+GuildWardenInfo.xml
+GuildWardenPopUp.xml
+GuildWardenGuildRequests.xml
+
+
