@@ -173,7 +173,7 @@
 					    GuildWardenStatusBarPing:SetMinMaxValues(0, 30);
 					    GuildWardenStatusBarPing.value:SetText(Pre .. "%");
 						GuildWardenStatusBarPing:SetValue(libGuildWarden.TempListMain["Sender"].Time2);
-						GuildWardenStatusBarPing.sendto:SetText("Waiting...");
+						GuildWardenStatusBarPing.sendto:SetText("Ожидание…");
 	 				end		
 			libGuildWarden.TempListMain["Sender"].Time2 = libGuildWarden.TempListMain["Sender"].Time2 + elapsed;
 			if (libGuildWarden.TempListMain["Sender"].Time2 > 30) then
@@ -356,7 +356,7 @@ function libGuildWarden.CloseSend()
 		GuildWardenStatusBarSending:SetMinMaxValues(0, 100);
 		GuildWardenStatusBarSending:SetValue(0);
 		GuildWardenStatusBarSending.value:SetText("0%");
-		GuildWardenStatusBarSending.sendto:SetText("Free to send...");
+		GuildWardenStatusBarSending.sendto:SetText("Готов к отправке");
 	end
 	libGuildWarden.SendAddonMessage("GW-HelpNo", "Done," .. libGuildWarden.TempListMain["Sender"].ListID, "WHISPER", libGuildWarden.TempListMain["Sender"].GoingTo);
 
@@ -369,7 +369,7 @@ function libGuildWarden.SetPingToFalse()
 			GuildWardenStatusBarPing:SetMinMaxValues(0, 100);
 			GuildWardenStatusBarPing:SetValue(0);
 			GuildWardenStatusBarPing.value:SetText("0%");
-			GuildWardenStatusBarPing.sendto:SetText("Ping is ready...");
+			GuildWardenStatusBarPing.sendto:SetText("Готов к пингу");
 	 	end
 
 end
