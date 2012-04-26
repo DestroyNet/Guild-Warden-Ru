@@ -285,11 +285,11 @@ function libGuildWarden.GetStatus()
 		libGuildWarden.SetPlayerInfo(subname, "Faction", UnitFactionGroup("player"));
 		libGuildWarden.SetPlayerInfo(subname, "Updated", date("%m/%d/%y %H.%M.%S"));
 		
-		
+		local joinedDate = strsplit(" ", libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined,2);
 		if (not libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined) then
 			libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined = "00/00/00";
 		end
-		if (libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined == date("%m/%d/%y %H.%M.%S")) then
+		if (joinedDate == date("%m/%d/%y")) then
 			Joined = Joined + 1;
 		end
 		
@@ -356,7 +356,8 @@ function libGuildWarden.GetStatus()
 		else
 			libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][key].Dateremoved = nil;
 		end
-		if (libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][key].Dateleft == date("%m/%d/%y %H.%M.%S")) then
+		local leftDate = strsplit(" ", libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][key].Dateleft, 2);
+		if (leftDate == date("%m/%d/%y")) then
 			if (not libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][key].Dateremoved) then
 				Left = Left + 1;
 			end
