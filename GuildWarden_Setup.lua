@@ -197,7 +197,7 @@ function libGuildWarden.SetupStatusBars()
 			GuildWardenStatusBarSending.sendto:SetJustifyH("LEFT")
 			GuildWardenStatusBarSending.sendto:SetShadowOffset(1, -1)
 			GuildWardenStatusBarSending.sendto:SetTextColor(1, 1, 1)
-			GuildWardenStatusBarSending.sendto:SetText("Free to send...")
+			GuildWardenStatusBarSending.sendto:SetText("Готов к отправке")
 
 			GuildWardenStatusBarSending.value = GuildWardenStatusBarSending:CreateFontString(nil, "OVERLAY")
 			GuildWardenStatusBarSending.value:SetPoint("RIGHT", GuildWardenStatusBarSending, "LEFT", 0, 0)
