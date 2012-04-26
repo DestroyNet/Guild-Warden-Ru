@@ -284,7 +284,6 @@ function libGuildWarden.GetStatus()
 		libGuildWarden.SetPlayerInfo(subname, "Guild", guildName);
 		libGuildWarden.SetPlayerInfo(subname, "Faction", UnitFactionGroup("player"));
 		libGuildWarden.SetPlayerInfo(subname, "Updated", date("%m/%d/%y %H.%M.%S"));
-		--libGuildWarden.SetPlayerInfo(subname, "EnClass", subclassFileName);
 		
 		
 		if (not libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined) then
