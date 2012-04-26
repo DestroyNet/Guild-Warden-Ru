@@ -284,6 +284,7 @@ function libGuildWarden.GetStatus()
 		libGuildWarden.SetPlayerInfo(subname, "Guild", guildName);
 		libGuildWarden.SetPlayerInfo(subname, "Faction", UnitFactionGroup("player"));
 		libGuildWarden.SetPlayerInfo(subname, "Updated", date("%m/%d/%y %H.%M.%S"));
+		--libGuildWarden.SetPlayerInfo(subname, "EnClass", subclassFileName);
 		
 		
 		if (not libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined) then
@@ -294,18 +295,18 @@ function libGuildWarden.GetStatus()
 		end
 		
 		
-		if (not GuildMemberCountCLass[subclass]) then
-			GuildMemberCountCLass[subclass] = {};
-			GuildMemberCountCLass[subclass].Max = 0;
-			GuildMemberCountCLass[subclass].Under = 0;
+		if (not GuildMemberCountCLass[subclassFileName]) then
+			GuildMemberCountCLass[subclassFileName] = {};
+			GuildMemberCountCLass[subclassFileName].Max = 0;
+			GuildMemberCountCLass[subclassFileName].Under = 0;
 		end
 		if (sublevel == 85) then
 			GuildMemberCountMax = GuildMemberCountMax + 1;
 
-			GuildMemberCountCLass[subclass].Max = GuildMemberCountCLass[subclass].Max + 1;
+			GuildMemberCountCLass[subclassFileName].Max = GuildMemberCountCLass[subclassFileName].Max + 1;
 		else
 			GuildMemberCountUnder = GuildMemberCountUnder + 1;
-			GuildMemberCountCLass[subclass].Under = GuildMemberCountCLass[subclass].Under + 1;
+			GuildMemberCountCLass[subclassFileName].Under = GuildMemberCountCLass[subclassFileName].Under + 1;
 		end
 		if (not years) then
 			years = 0;
@@ -382,43 +383,43 @@ function libGuildWarden.GetStatus()
 	Total = GuildMemberCountMax + GuildMemberCountUnder;
 	frmGuildWardenMainLabelMaxLVLNum:SetText(GuildMemberCountMax .. "/" .. Total);
 	
-	TypeClass = "Рыцарь смерти";
+	TypeClass = "DEATHKNIGHT";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDKNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "Друид";
+    TypeClass = "DRUID";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "Жрец";
+    TypeClass = "PRIEST";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPRNum:SetText(Amount.. "/" .. Total);
 
-    TypeClass = "Паладин";
+    TypeClass = "PALADIN";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPANum:SetText(Amount .. "/" .. Total);
  	
-    TypeClass = "Шаман";
+    TypeClass = "SHAMAN";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelSNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "Маг";
+    TypeClass = "MAGE";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelMNum:SetText(Amount .. "/" .. Total);
  	
-    TypeClass = "Разбойник";
+    TypeClass = "ROGUE";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelRNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "Воин";
+    TypeClass = "WARRIOR";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWRNum:SetText(Amount .. "/" .. Total);
  	
-    TypeClass = "Чернокнижник";
+    TypeClass = "WARLOCK";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWLNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "Охотник";
+    TypeClass = "HUNTER";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelHNum:SetText(Amount .. "/" .. Total);
 
