@@ -1,4 +1,4 @@
-<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Button name="GuildLeftButtonTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="299" y="20"/>
@@ -343,7 +343,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString inherits="GameFontHighlightSmall" text="Show only guild members.">
+						<FontString inherits="GameFontHighlightSmall" text="Показывать только согильдийцев">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>

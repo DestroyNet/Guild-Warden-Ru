@@ -307,10 +307,10 @@ function libGuildWarden.SetLeftView()
 	local haveIcon, haveBar;
 	
 	
-	GUILD_LEFT_COLUMN_DATA[1] = { width = 32, text = "LVL", stringJustify="CENTER", type = "LVL"};
-	GUILD_LEFT_COLUMN_DATA[2] = { width = 32, text = "Cls", hasIcon = true, type = "Class" };
-	GUILD_LEFT_COLUMN_DATA[3] = { width = 81, text = "Name", stringJustify="LEFT", type = "Name" };
-	GUILD_LEFT_COLUMN_DATA[4] = { width = 144, text = "Date Left", stringJustify="LEFT", type = "Date" };	
+	GUILD_LEFT_COLUMN_DATA[1] = { width = 32, text = "Ур", stringJustify="CENTER", type = "LVL"};
+	GUILD_LEFT_COLUMN_DATA[2] = { width = 32, text = "Кл", hasIcon = true, type = "Class" };
+	GUILD_LEFT_COLUMN_DATA[3] = { width = 81, text = "Имя", stringJustify="LEFT", type = "Name" };
+	GUILD_LEFT_COLUMN_DATA[4] = { width = 144, text = "Дата ухода", stringJustify="LEFT", type = "Date" };	
     libGuildWarden.TempListMain["Left"].sort = "Date"
     libGuildWarden.TempListMain["Left"].dir = "-"
 	for columnIndex = 1, 4 do
@@ -433,7 +433,7 @@ local Counter = libGuildWarden.TempListMain["Left"].Max;
 					else
 						if (libGuildWarden.GetPlayerInfo(Playerinfo.Name)) then
 					    	if (libGuildWarden.GetPlayerInfo(Playerinfo.Name).Guild == guildName) then
-								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "No Guild");	
+								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "Н/Д");	
 							end					
 						end
 						libGuildWarden.SetStringText(button.string3, Playerinfo.Date);				
@@ -587,7 +587,7 @@ local Counter = libGuildWarden.TempListMain["Joined"].Max;
 				else	
 						if (libGuildWarden.GetPlayerInfo(Playerinfo.Name)) then
 					    	if (libGuildWarden.GetPlayerInfo(Playerinfo.Name).Guild == guildName) then
-								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "No Guild");	
+								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "Н/Д");	
 							end					
 						end										
                 	libGuildWarden.SetStringText(button.string3, Playerinfo.Date);
@@ -615,10 +615,10 @@ function libGuildWarden.SetJoinedView()
 	local haveIcon, haveBar;
 	
 	
-	GUILD_JOINED_COLUMN_DATA[1] = { width = 32, text = "LVL", stringJustify="CENTER", type = "LVL"};
-	GUILD_JOINED_COLUMN_DATA[2] = { width = 32, text = "Cls", hasIcon = true, type = "Class" };
-	GUILD_JOINED_COLUMN_DATA[3] = { width = 81, text = "Name", stringJustify="LEFT", type = "Name" };
-	GUILD_JOINED_COLUMN_DATA[4] = { width = 144, text = "Date Joined", stringJustify="LEFT", type = "Date" };	
+	GUILD_JOINED_COLUMN_DATA[1] = { width = 32, text = "Ур", stringJustify="CENTER", type = "LVL"};
+	GUILD_JOINED_COLUMN_DATA[2] = { width = 32, text = "Кл", hasIcon = true, type = "Class" };
+	GUILD_JOINED_COLUMN_DATA[3] = { width = 81, text = "Имя", stringJustify="LEFT", type = "Name" };
+	GUILD_JOINED_COLUMN_DATA[4] = { width = 144, text = "Дата прихода", stringJustify="LEFT", type = "Date" };	
     libGuildWarden.TempListMain["Joined"].sort = "Date"
     libGuildWarden.TempListMain["Joined"].dir = "-"
 	for columnIndex = 1, 4 do
@@ -753,10 +753,10 @@ function libGuildWarden.SetBannedView()
 	local haveIcon, haveBar;
 	
 	
-	GUILD_Banned_COLUMN_DATA[1] = { width = 32, text = "LVL", stringJustify="CENTER", type = "LVL"};
-	GUILD_Banned_COLUMN_DATA[2] = { width = 32, text = "Cls", hasIcon = true, type = "Class" };
-	GUILD_Banned_COLUMN_DATA[3] = { width = 81, text = "Name", stringJustify="LEFT", type = "Name" };
-	GUILD_Banned_COLUMN_DATA[4] = { width = 144, text = "Date Banned", stringJustify="LEFT", type = "Date" };	
+	GUILD_Banned_COLUMN_DATA[1] = { width = 32, text = "Ур", stringJustify="CENTER", type = "LVL"};
+	GUILD_Banned_COLUMN_DATA[2] = { width = 32, text = "Кл", hasIcon = true, type = "Class" };
+	GUILD_Banned_COLUMN_DATA[3] = { width = 81, text = "Имя", stringJustify="LEFT", type = "Name" };
+	GUILD_Banned_COLUMN_DATA[4] = { width = 144, text = "Дата бана", stringJustify="LEFT", type = "Date" };	
     libGuildWarden.TempListMain["Banned"].sort = "Date"
     libGuildWarden.TempListMain["Banned"].dir = "-"
 	for columnIndex = 1, 4 do
@@ -878,7 +878,7 @@ function GuildBanned_Update()
 				else
 						if (libGuildWarden.GetPlayerInfo(Playerinfo.Name)) then
 					    	if (libGuildWarden.GetPlayerInfo(Playerinfo.Name).Guild == guildName) then
-								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "No Guild");	
+								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "Н/Д");	
 							end					
 						end				
                 	libGuildWarden.SetStringText(button.string3, Playerinfo.Date);
@@ -912,7 +912,7 @@ function libGuildWarden.ShowUserBox(InfoName)
 				subname, subrank, subrankIndex, sublevel, subclass, subzone, subnote, subofficernote, subonline, substatus, subclassFileName, subachievementPoints, subachievementRank, subisMobile = GetGuildRosterInfo(PlayersIndex);							
 			end
 			if (not subrank) then
-				subrank = "NA";
+				subrank = "Н/Д";
 			end
 
 			local LVL = AllAbout.LVL;
@@ -921,19 +921,19 @@ function libGuildWarden.ShowUserBox(InfoName)
 		 	end
 			local Guild = AllAbout.Guild;
 		 	if (not Guild) then
-		 		Guild = "No Guild";
+		 		Guild = "Н/Д";
 		 	end	
 			local Class = AllAbout.Class;
 		 	if (not Class) then
-		 		Class = "No Class";
+		 		Class = "Н/Д";
 		 	end				 
 			local Faction = AllAbout.Faction;
 		 	if (not Faction) then
-		 		Faction = "No Faction";
+		 		Faction = "Н/Д";
 		 	end	
 			local Race = AllAbout.Race;
 		 	if (not Race) then
-		 		Race = "No Faction";
+		 		Race = "Н/Д";
 		 	end	
 		 	local thisID = "---";
 		 	thisID = libGuildWarden.ReturnID(InfoName);
@@ -948,31 +948,31 @@ function libGuildWarden.ShowUserBox(InfoName)
 				end		 	
 		 		Main = libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][thisID].Main;		 	
 		 		if (not Main) then
-		 			Main = "Not Set";
+		 			Main = "Не указан";
 		 		end			 		
 			end	 
-			local Joined = "NA";
+			local Joined = "Н/Д";
 			if (libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][InfoName]) then
 				if (libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][InfoName].Datejoined) then
 					Joined = libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][InfoName].Datejoined;
 				end
 			end
-			local Left = "NA";
+			local Left = "Н/Д";
 			if (libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][InfoName]) then
 				if (libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][InfoName].Dateleft) then
 					Left = libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][InfoName].Dateleft;
 				end
 				if (libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][InfoName].Dateleft == "00/00/00 00.00.00") then
-					Left = "NA*";
+					Left = "Н/Д";
 				end
 				if (libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][InfoName].Dateleft == "00/00/00") then
-					Left = "NA*";
+					Left = "Н/Д";
 				end				
 			end	
 			
-			local Banned = "NA";
-			local BannedBy = "NA";
-			local BannedReason = "NA";
+			local Banned = "Н/Д";
+			local BannedBy = "Н/Д";
+			local BannedReason = "Н/Д";
 			if (thisID ~= "---") then
 				if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][thisID]) then
 					if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][thisID].Datebanned) then
@@ -992,28 +992,28 @@ function libGuildWarden.ShowUserBox(InfoName)
 			end
 			
 						 			 	 	
-			frmGuildWardenInfo.CharName:SetText("Name: " .. InfoName)
+			frmGuildWardenInfo.CharName:SetText("Имя: " .. InfoName)
 			
 			
-			frmGuildWardenInfo.CharLVL:SetText("Level: " .. LVL) 		
+			frmGuildWardenInfo.CharLVL:SetText("Уровень: " .. LVL) 		
 			
 			frmGuildWardenInfo.CharGuild:SetText("<" .. Guild .. ">") 	
 			
-			frmGuildWardenInfo.CharClass:SetText("Class: ".. Class) 		 
+			frmGuildWardenInfo.CharClass:SetText("Класс: ".. Class) 		 
 			
-			frmGuildWardenInfo.CharFaction:SetText("Faction: ".. Faction) 
+			frmGuildWardenInfo.CharFaction:SetText("Фракция: ".. Faction) 
 			
-			frmGuildWardenInfo.CharRace:SetText("Race: ".. Race) 
+			frmGuildWardenInfo.CharRace:SetText("Раса: ".. Race) 
 			
 			frmGuildWardenInfo.CharMain:SetText("[".. Main .. "]") 
 			
-			frmGuildWardenInfo.CharJoined:SetText("Joined: ".. Joined)
+			frmGuildWardenInfo.CharJoined:SetText("Дата прихода: ".. Joined)
 			
-			frmGuildWardenInfo.CharLeft:SetText("Left: ".. Left)
+			frmGuildWardenInfo.CharLeft:SetText("Дата ухода: ".. Left)
 			
-			frmGuildWardenInfo.CharRank:SetText("Rank: ".. subrank)
+			frmGuildWardenInfo.CharRank:SetText("Звание: ".. subrank)
 			
-			if (Banned == "NA") then
+			if (Banned == "Н/Д") then
 				frmGuildWardenInfo.CharBanned:Hide();
 				frmGuildWardenInfo.CharBannedBy:Hide();
 				frmGuildWardenInfo.CharBannedR:Hide();
@@ -1023,43 +1023,39 @@ function libGuildWarden.ShowUserBox(InfoName)
 					frmGuildWardenInfo.CharBannedBy:Show();
 					frmGuildWardenInfo.CharBannedR:Show();	
 								
-					frmGuildWardenInfo.CharBanned:SetText("Banned: " .. Banned);
-					frmGuildWardenInfo.CharBannedBy:SetText("By: ".. BannedBy);
-					frmGuildWardenInfo.CharBannedR:SetText("Reason: " .. BannedReason);
+					frmGuildWardenInfo.CharBanned:SetText("Забанен: " .. Banned);
+					frmGuildWardenInfo.CharBannedBy:SetText("Кем: ".. BannedBy);
+					frmGuildWardenInfo.CharBannedR:SetText("Причина: " .. BannedReason);
 				else
 					frmGuildWardenInfo.CharBanned:Show();
 					frmGuildWardenInfo.CharBannedBy:Show();
 					frmGuildWardenInfo.CharBannedR:Hide();	
 								
-					frmGuildWardenInfo.CharBanned:SetText("Removed Banned: " .. Banned);
-					frmGuildWardenInfo.CharBannedBy:SetText("By: ".. BannedBy);
+					frmGuildWardenInfo.CharBanned:SetText("Разбанен: " .. Banned);
+					frmGuildWardenInfo.CharBannedBy:SetText("Кем: ".. BannedBy);
 					--frmGuildWardenInfo.CharBannedR::SetText("Reason: " .. BannedReason)				
 				end
 			end
-			GuildWardenDeleteChar:SetText("Remove Alt");	
+			GuildWardenDeleteChar:SetText("Удалить");	
 			GuildWardenDeleteChar:Enable(); 	
 			local NumberAlts = libGuildWarden.GetAlts(InfoName);
 			local Count = 0;
 			for key, value in pairs(NumberAlts) do
 				Count = Count + 1;
 			end														
-			if (Count < 2) then
-				GuildWardenDeleteChar:SetText("No Action");		
+			if (Count < 2) then	
 				GuildWardenDeleteChar:Disable();			
 			end		
 			if (not AllAbout.ID or AllAbout.ID == "??") then
 				if (not LVL or tostring(LVL) == "??" or tostring(LVL) == "0" or tostring(LVL) == "-1") then
-					if (not libGuildWarden.GetPlayersGuildIndex((InfoName))) then
-						GuildWardenDeleteChar:SetText("Delete Char");		
+					if (not libGuildWarden.GetPlayersGuildIndex((InfoName))) then	
 						GuildWardenDeleteChar:Enable(); 							
 					end
 				end
 			else
-				if (IsGuildLeader() and not libGuildWarden.GetPlayersGuildIndex(InfoName)) then
-						GuildWardenDeleteChar:SetText("Delete Char*");		
+				if (libGuildWarden.IsGuildLeader() and not libGuildWarden.GetPlayersGuildIndex(InfoName)) then		
 						GuildWardenDeleteChar:Enable(); 				
-				else
-					GuildWardenDeleteChar:SetText("No Action");		
+				else	
 					GuildWardenDeleteChar:Disable();
 				end
 			end
@@ -1113,12 +1109,12 @@ local LeftList = libGuildWarden.GetAlts(libGuildWarden.SelectedName);
 local CountList= {};         
 local Counter = 0;
 
-		GuildWardenBannedBtn1:SetText("Ban All");
+		GuildWardenBannedBtn1:SetText("Забанить всех");
 
         local SelectID = libGuildWarden.ReturnID(libGuildWarden.SelectedName);
 		if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][SelectID]) then
 			if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][SelectID].Datebanned) then
-				GuildWardenBannedBtn1:SetText("Remove Ban");
+				GuildWardenBannedBtn1:SetText("Разбанить");
 			end
 		end
 
@@ -1132,7 +1128,7 @@ for key, value in pairs(LeftList) do
 			CountList[Counter].LVL = 0;
 		end 
 		if (not CountList[Counter].Guild) then
-			CountList[Counter].Guild = "No Guild";
+			CountList[Counter].Guild = "Н/Д";
 		end 
 	end
 end
@@ -1154,10 +1150,10 @@ function libGuildWarden.SetAltsView()
 	local haveIcon, haveBar;
 	
 	
-	GUILD_Alts_COLUMN_DATA[1] = { width = 32, text = "LVL", stringJustify="CENTER", type = "LVL"};
-	GUILD_Alts_COLUMN_DATA[2] = { width = 32, text = "Cls", hasIcon = true, type = "Class" };
-	GUILD_Alts_COLUMN_DATA[3] = { width = 81, text = "Name", stringJustify="LEFT", type = "Name" };
-	GUILD_Alts_COLUMN_DATA[4] = { width = 144, text = "Guild", stringJustify="LEFT", type = "Guild" };	
+	GUILD_Alts_COLUMN_DATA[1] = { width = 32, text = "Ур", stringJustify="CENTER", type = "LVL"};
+	GUILD_Alts_COLUMN_DATA[2] = { width = 32, text = "Кл", hasIcon = true, type = "Class" };
+	GUILD_Alts_COLUMN_DATA[3] = { width = 81, text = "Имя", stringJustify="LEFT", type = "Name" };
+	GUILD_Alts_COLUMN_DATA[4] = { width = 144, text = "Гильдия", stringJustify="LEFT", type = "Guild" };	
     libGuildWarden.TempListMain["Alts"].sort = "Guild"
     libGuildWarden.TempListMain["Alts"].dir = "-"
 	for columnIndex = 1, 4 do
@@ -1337,7 +1333,7 @@ for key, value in pairs(LeftList) do
 					CountList[Counter].LVL = 0;
 				end
 				if (not CountList[Counter].Guild) then
-					CountList[Counter].Guild = "No Guild";
+					CountList[Counter].Guild = "Н/Д";
 				end
 			end
 		end
@@ -1360,10 +1356,10 @@ function libGuildWarden.SetRealmView()
 	local haveIcon, haveBar;
 
 
-	GUILD_Realm_COLUMN_DATA[1] = { width = 32, text = "LVL", stringJustify="CENTER", type = "LVL"};
-	GUILD_Realm_COLUMN_DATA[2] = { width = 32, text = "Cls", hasIcon = true, type = "Class" };
-	GUILD_Realm_COLUMN_DATA[3] = { width = 81, text = "Name", stringJustify="LEFT", type = "Name" };
-	GUILD_Realm_COLUMN_DATA[4] = { width = 144, text = "Guild", stringJustify="LEFT", type = "Guild" };
+	GUILD_Realm_COLUMN_DATA[1] = { width = 32, text = "Ур", stringJustify="CENTER", type = "LVL"};
+	GUILD_Realm_COLUMN_DATA[2] = { width = 32, text = "Кл", hasIcon = true, type = "Class" };
+	GUILD_Realm_COLUMN_DATA[3] = { width = 81, text = "Имя", stringJustify="LEFT", type = "Name" };
+	GUILD_Realm_COLUMN_DATA[4] = { width = 144, text = "Гильдия", stringJustify="LEFT", type = "Guild" };
     libGuildWarden.TempListMain["Realm"].sort = "Guild"
     libGuildWarden.TempListMain["Realm"].dir = "-"
 	for columnIndex = 1, 4 do
@@ -1475,7 +1471,7 @@ local Counter = libGuildWarden.TempListMain["Realm"].Max;
 					end
 				else
 					if (libGuildWarden.GetPlayerInfo(Playerinfo.Name).Guild == guildName) then
-						libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "No Guild");
+						libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "Н/Д");
 					end
                 	libGuildWarden.SetStringText(button.string3, Playerinfo.Guild);
                 	libGuildWarden.SetStringText(button.string1, Playerinfo.LVL);
@@ -1730,12 +1726,12 @@ function GuildNotesButton_OnClick(self, button)
 		ToShow =  ToShow  .. "\n";
 		ToShow =  ToShow  .. SelectedNotes.Name .. ": " ..  SelectedNotes.Text;
 		ToShow =  ToShow  .. "\n";
-		ToShow =  ToShow  .. "By: " .. SelectedNotes.By .. " On: " .. SelectedNotes.Date;
+		ToShow =  ToShow  .. "Автор: " .. SelectedNotes.By .. " Дата: " .. SelectedNotes.Date;
 		ToShow =  ToShow  .. "\n";
-		ToShow =  ToShow  .. "Right Click to edit or delete the note";		
+		ToShow =  ToShow  .. "Нажмите правой кнопкой для редактирования";		
 		
 		libGuildWarden.YesNoFunction = nil;
-		libGuildWarden.ShowPopUp(ToShow, "Close", "Close", true);			
+		libGuildWarden.ShowPopUp(ToShow, "Закрыть", "Закрыть", true);			
 		
 		libGuildWarden.HyperlinkClicked(self, "player:" .. SelectedNotes.Name .. ":STOP", nil, button);		
 	else	
@@ -1778,7 +1774,7 @@ function GuildNotesButton_OnClick(self, button)
 											GuildNotes_Update();					
 											
 										end;
-		libGuildWarden.ShowPopUp("Enter Note Text Belowe \n Type DELETE to delete this not!", "Update", "Cancel", false, SelectedNotes.Text);								
+		libGuildWarden.ShowPopUp("Введите текст заметки \n Введите DELETE для удаления", "Обновить", "Отмена", false, SelectedNotes.Text);								
 		
 		
 		
@@ -1841,10 +1837,10 @@ function libGuildWarden.SetNotesView()
 	local stringOffset = 0;
 	local haveIcon, haveBar;
 
-	GUILD_Notes_COLUMN_DATA[1] = { width = 69, text = "Name", stringJustify="LEFT", type = "Name" };
-	GUILD_Notes_COLUMN_DATA[2] = { width = 81, text = "Text", stringJustify="LEFT", type = "Text" };
-	GUILD_Notes_COLUMN_DATA[3] = { width = 69, text = "Date", stringJustify="LEFT", type = "Date"};
-	GUILD_Notes_COLUMN_DATA[4] = { width = 69, text = "By", stringJustify="LEFT", type = "By" };	
+	GUILD_Notes_COLUMN_DATA[1] = { width = 69, text = "Название", stringJustify="LEFT", type = "Name" };
+	GUILD_Notes_COLUMN_DATA[2] = { width = 81, text = "Текст", stringJustify="LEFT", type = "Text" };
+	GUILD_Notes_COLUMN_DATA[3] = { width = 69, text = "Дата", stringJustify="LEFT", type = "Date"};
+	GUILD_Notes_COLUMN_DATA[4] = { width = 69, text = "Автор", stringJustify="LEFT", type = "By" };	
     libGuildWarden.TempListMain["Notes"].sort = "Name"
     libGuildWarden.TempListMain["Notes"].dir = "-"
 	for columnIndex = 1, 4 do

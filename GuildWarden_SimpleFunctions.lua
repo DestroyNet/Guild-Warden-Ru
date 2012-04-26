@@ -66,7 +66,7 @@ function libGuildWarden.UpdateInfo(Name, Level, Race, Class, Guild)
 	local thmpThisPlayer = {};
 
 	if (Guild == nil) then
-		Guild = "No Guild";                       
+		Guild = "Н/Д";                       
 	end
 	if (libGuildWarden.ClassFix(Class)) then
 		Class = libGuildWarden.ClassFix(Class);
@@ -251,7 +251,7 @@ function libGuildWarden.GetGuildInfo()
 				libGuildWarden.YesNoFunction = nil;
 				libGuildWarden.ShowPopUp("Guild Warden, Couldn't get your guild's name\n from blizzard. Guild Warden is off\n type \"/reload\" to restart Guild Warden.", "Close", "Close" ,true);			 
 			end		
-			return "No Guild", "None", 0;
+			return "Н/Д", "None", 0;
 			
         end
      else
@@ -260,7 +260,7 @@ function libGuildWarden.GetGuildInfo()
 			libGuildWarden.YesNoFunction = nil;
 			libGuildWarden.ShowPopUp("\nYou are not in a guild!\n Guild Warden is off until...\n You join a guild then re-log.", "Close", "Close" ,true);			 
 		end
-        return "No Guild", "None", 0;
+        return "Н/Д", "None", 0;
      end
 
 end

@@ -357,7 +357,7 @@
 						</Anchor>
 					</Anchors>
 				</FontString>	
-				<FontString name="$parentSearchLabel" inherits="GameFontNormal" text="Search: ">
+				<FontString name="$parentSearchLabel" inherits="GameFontNormal" text="Поиск: ">
 					<Anchors>
 						<Anchor point="LEFT" x="146" y="0"/>
 					</Anchors>
@@ -455,7 +455,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString inherits="GameFontHighlightSmall" text="Show only guild members.">
+						<FontString inherits="GameFontHighlightSmall" text="Показывать только согильдийцев">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>

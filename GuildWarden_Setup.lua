@@ -193,7 +193,7 @@ function libGuildWarden.SetupStatusBars()
 
 			GuildWardenStatusBarSending.sendto = GuildWardenStatusBarSending:CreateFontString(nil, "OVERLAY")
 			GuildWardenStatusBarSending.sendto:SetPoint("LEFT", GuildWardenStatusBarSending, "LEFT", 4, 0)
-			GuildWardenStatusBarSending.sendto:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			GuildWardenStatusBarSending.sendto:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			GuildWardenStatusBarSending.sendto:SetJustifyH("LEFT")
 			GuildWardenStatusBarSending.sendto:SetShadowOffset(1, -1)
 			GuildWardenStatusBarSending.sendto:SetTextColor(1, 1, 1)
@@ -201,7 +201,7 @@ function libGuildWarden.SetupStatusBars()
 
 			GuildWardenStatusBarSending.value = GuildWardenStatusBarSending:CreateFontString(nil, "OVERLAY")
 			GuildWardenStatusBarSending.value:SetPoint("RIGHT", GuildWardenStatusBarSending, "LEFT", 0, 0)
-			GuildWardenStatusBarSending.value:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			GuildWardenStatusBarSending.value:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			GuildWardenStatusBarSending.value:SetJustifyH("LEFT")
 			GuildWardenStatusBarSending.value:SetShadowOffset(1, -1)
 			GuildWardenStatusBarSending.value:SetTextColor(0, 1, 0)
@@ -209,11 +209,11 @@ function libGuildWarden.SetupStatusBars()
 
 			GuildWardenStatusBarSending.info = GuildWardenStatusBarSending:CreateFontString(nil, "OVERLAY")
 			GuildWardenStatusBarSending.info:SetPoint("RIGHT", GuildWardenStatusBarSending, "LEFT", -45, 0)
-			GuildWardenStatusBarSending.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			GuildWardenStatusBarSending.info:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			GuildWardenStatusBarSending.info:SetJustifyH("LEFT")
 			GuildWardenStatusBarSending.info:SetShadowOffset(1, -1)
 			GuildWardenStatusBarSending.info:SetTextColor(1, 0, 0)
-			GuildWardenStatusBarSending.info:SetText("Sending:" )
+			GuildWardenStatusBarSending.info:SetText("Отправка:" )
 
             GuildWardenStatusBarSending:Show();
 
@@ -236,15 +236,15 @@ function libGuildWarden.SetupStatusBars()
 
 			StatusBar.sendto = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.sendto:SetPoint("LEFT", StatusBar, "LEFT", 4, 0)
-			StatusBar.sendto:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.sendto:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.sendto:SetJustifyH("LEFT")
 			StatusBar.sendto:SetShadowOffset(1, -1)
 			StatusBar.sendto:SetTextColor(1, 1, 1)
-			StatusBar.sendto:SetText("Free to Receive...")
+			StatusBar.sendto:SetText("Готов к отправке")
 
 			StatusBar.value = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.value:SetPoint("RIGHT", StatusBar, "LEFT", 0, 0)
-			StatusBar.value:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.value:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.value:SetJustifyH("LEFT")
 			StatusBar.value:SetShadowOffset(1, -1)
 			StatusBar.value:SetTextColor(0, 1, 0)
@@ -252,11 +252,11 @@ function libGuildWarden.SetupStatusBars()
 
 			StatusBar.info = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.info:SetPoint("RIGHT", StatusBar, "LEFT", -45, 0)
-			StatusBar.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.info:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.info:SetJustifyH("LEFT")
 			StatusBar.info:SetShadowOffset(1, -1)
 			StatusBar.info:SetTextColor(0, 0, 1)
-			StatusBar.info:SetText("Receive:" )
+			StatusBar.info:SetText("Получение:" )
 
             StatusBar:Show();
 
@@ -279,15 +279,15 @@ function libGuildWarden.SetupStatusBars()
 
 			StatusBar.sendto = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.sendto:SetPoint("LEFT", StatusBar, "LEFT", 4, 0)
-			StatusBar.sendto:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.sendto:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.sendto:SetJustifyH("LEFT")
 			StatusBar.sendto:SetShadowOffset(1, -1)
 			StatusBar.sendto:SetTextColor(1, 1, 1)
-			StatusBar.sendto:SetText("Free to Receive...")
+			StatusBar.sendto:SetText("Готов к получению")
 
 			StatusBar.value = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.value:SetPoint("RIGHT", StatusBar, "LEFT", 0, 0)
-			StatusBar.value:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.value:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.value:SetJustifyH("LEFT")
 			StatusBar.value:SetShadowOffset(1, -1)
 			StatusBar.value:SetTextColor(0, 1, 0)
@@ -295,11 +295,11 @@ function libGuildWarden.SetupStatusBars()
 
 			StatusBar.info = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.info:SetPoint("RIGHT", StatusBar, "LEFT", -45, 0)
-			StatusBar.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.info:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.info:SetJustifyH("LEFT")
 			StatusBar.info:SetShadowOffset(1, -1)
 			StatusBar.info:SetTextColor(0, 0, 1)
-			StatusBar.info:SetText("Receive:" )
+			StatusBar.info:SetText("Получение:" )
 
             StatusBar:Show();
 
@@ -323,7 +323,7 @@ function libGuildWarden.SetupStatusBars()
 
 			StatusBar.sendto = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.sendto:SetPoint("LEFT", StatusBar, "LEFT", 4, 0)
-			StatusBar.sendto:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.sendto:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.sendto:SetJustifyH("LEFT")
 			StatusBar.sendto:SetShadowOffset(1, -1)
 			StatusBar.sendto:SetTextColor(1, 1, 1)
@@ -331,7 +331,7 @@ function libGuildWarden.SetupStatusBars()
 
 			StatusBar.value = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.value:SetPoint("RIGHT", StatusBar, "LEFT", 0, 0)
-			StatusBar.value:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.value:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.value:SetJustifyH("LEFT")
 			StatusBar.value:SetShadowOffset(1, -1)
 			StatusBar.value:SetTextColor(0, 1, 0)
@@ -339,11 +339,11 @@ function libGuildWarden.SetupStatusBars()
 
 			StatusBar.info = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.info:SetPoint("RIGHT", StatusBar, "LEFT", -45, 0)
-			StatusBar.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			StatusBar.info:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			StatusBar.info:SetJustifyH("LEFT")
 			StatusBar.info:SetShadowOffset(1, -1)
 			StatusBar.info:SetTextColor(0, 1, 0)
-			StatusBar.info:SetText("Ping:" )
+			StatusBar.info:SetText("Пинг:" )
 
             StatusBar:Show();
 
@@ -388,11 +388,11 @@ function libGuildWarden.SetupStatusBars()
             
 			Slider.info = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.info:SetPoint("RIGHT", Slider, "LEFT", -5, 0)
-			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 			Slider.info:SetJustifyH("LEFT")
 			Slider.info:SetShadowOffset(1, -1)
 			Slider.info:SetTextColor(1, 0, 0)
-			Slider.info:SetText("Sending Rate:" )       
+			Slider.info:SetText("Скорость отправки:" )       
 			
 			Slider.rate = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.rate:SetPoint("TOP", Slider, "BOTTOM", 0, -5)
@@ -400,7 +400,7 @@ function libGuildWarden.SetupStatusBars()
 			Slider.rate:SetJustifyH("LEFT")
 			Slider.rate:SetShadowOffset(1, -1)
 			Slider.rate:SetTextColor(1, 1, 1)
-			Slider.rate:SetText("Your list will take 10mins" ) 			     
+			Slider.rate:SetText("Отправка займёт 10 мин." ) 			     
 --            Slider:SetValueStep(1);
             Slider:SetScript("OnValueChanged", function(self, value)
                                 	libGuildWarden.CalSpeed(value);
@@ -456,7 +456,7 @@ function libGuildWarden.SetupStatusBars()
 			StatusBar.sendto:SetJustifyH("LEFT")
 			StatusBar.sendto:SetShadowOffset(1, -1)
 			StatusBar.sendto:SetTextColor(1, 1, 1)
-			StatusBar.sendto:SetText("0 per sec")
+			StatusBar.sendto:SetText("0 в сек.")
 
 			StatusBar.value = StatusBar:CreateFontString(nil, "OVERLAY")
 			StatusBar.value:SetPoint("RIGHT", StatusBar, "LEFT", 0, 0)
@@ -465,8 +465,8 @@ function libGuildWarden.SetupStatusBars()
 			StatusBar.value:SetShadowOffset(1, -1)
 			StatusBar.value:SetTextColor(0, 1, 0)
 			StatusBar.value:SetText("0%")
-			StatusBar.tooltipTitle = "Sending Rate"
-			StatusBar.tooltipText = "this show what ALL your Addon's are Sending"
+			StatusBar.tooltipTitle = "Скорость отправки"
+			StatusBar.tooltipText = "Показывает отправку данных всех аддонов"
 			StatusBar:SetScript("OnEnter", function(self)
 								GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 								GameTooltip:AddLine(self.tooltipTitle);          			
@@ -508,8 +508,8 @@ function libGuildWarden.SetupStatusBars()
 			StatusBar.value:SetShadowOffset(1, -1)
 			StatusBar.value:SetTextColor(0, 1, 0)
 			StatusBar.value:SetText("0%")
-			StatusBar.tooltipTitle = "Receiving Rate"
-			StatusBar.tooltipText = "this show what ALL your Addon's are Receiving"
+			StatusBar.tooltipTitle = "Скорость получения"
+			StatusBar.tooltipText = "Показывает получение данных всеми аддонами"
 			StatusBar:SetScript("OnEnter", function(self)
 								GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 								GameTooltip:AddLine(self.tooltipTitle);          			
@@ -537,8 +537,8 @@ function libGuildWarden.SetUpSideBar()
         CreateFrame("button", "GuildWardenAddBtn1", frmGuildWardenAlts, "UIPanelButtonTemplate")
         	    GuildWardenAddBtn1:SetPoint("TOPLEFT", frmGuildWardenAlts, "BOTTOMLEFT", 0, 0);
                 GuildWardenAddBtn1:SetHeight(22);
-                GuildWardenAddBtn1:SetWidth(100);
-                GuildWardenAddBtn1:SetText("Add Alt");
+                GuildWardenAddBtn1:SetWidth(130);
+                GuildWardenAddBtn1:SetText("Добавить альта");
                 GuildWardenAddBtn1:SetScript("OnClick", function(self, button)				
 				
 				libGuildWarden.SelectedMainsName = libGuildWarden.SelectedName;
@@ -610,7 +610,7 @@ function libGuildWarden.SetUpSideBar()
 													GuildAlts_Update();					
 													libGuildWardenSaveVar["Updates"]["Realm"] = date("%m/%d/%y %H.%M.%S");
 												end;						
-						libGuildWarden.ShowPopUp("Enter alts char. name to add it to \n" .. libGuildWarden.SelectedMainsName, "Add", "Cancel");						
+						libGuildWarden.ShowPopUp("Введите имя альта \n" .. libGuildWarden.SelectedMainsName, "Добавить", "Отмена");						
     		            --StaticPopup_Show ("GuildWarden_AddAlt")
                     end);
 		
@@ -618,10 +618,10 @@ function libGuildWarden.SetUpSideBar()
         CreateFrame("button", "GuildWardenBannedBtn1", frmGuildWardenAlts, "UIPanelButtonTemplate")
         	    GuildWardenBannedBtn1:SetPoint("TOPLEFT", GuildWardenAddBtn1, "TOPRIGHT", 0, 0);
                 GuildWardenBannedBtn1:SetHeight(22);
-                GuildWardenBannedBtn1:SetWidth(100);
-                GuildWardenBannedBtn1:SetText("Ban All");
+                GuildWardenBannedBtn1:SetWidth(120);
+                GuildWardenBannedBtn1:SetText("Забанить всех");
                 GuildWardenBannedBtn1:SetScript("OnClick", function(self, button)
-                        if (GuildWardenBannedBtn1:GetText() == "Ban All") then
+                        if (GuildWardenBannedBtn1:GetText() == "Забанить всех") then
 							libGuildWarden.SelectedMainsName = libGuildWarden.SelectedName;
     		            	--StaticPopup_Show ("GuildWarden_AddBanned")
 							libGuildWarden.YesNoFunction = function()
@@ -629,7 +629,7 @@ function libGuildWarden.SetUpSideBar()
 															local Mainsname = libGuildWarden.SelectedMainsName;
 															libGuildWarden.BanPlayer(Mainsname, reason);																			
 														end;								
-							libGuildWarden.ShowPopUp("Enter reason to ban \n" ..libGuildWarden.SelectedName, "Ban!", "Cancel");							
+							libGuildWarden.ShowPopUp("Введите причину бана \n" ..libGuildWarden.SelectedName, "Бан", "Отмена");							
     		            else
 							libGuildWarden.SelectedMainsName = libGuildWarden.SelectedName;
 							libGuildWarden.YesNoFunction = function()							
@@ -733,7 +733,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharFaction:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharFaction:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharFaction:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharFaction:SetText("Faction: Not Set")
+			frmGuildWardenInfo.CharFaction:SetText("Фракция: Н/Д")
 			
 			frmGuildWardenInfo.CharClass = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharClass:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharFaction, "BOTTOMRIGHT", 0, -2)
@@ -741,7 +741,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharClass:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharClass:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharClass:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharClass:SetText("Class: No Class") 
+			frmGuildWardenInfo.CharClass:SetText("Класс: Н/Д") 
 			 			
 			frmGuildWardenInfo.CharRace = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharRace:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharClass, "BOTTOMRIGHT", 0, -2)
@@ -749,7 +749,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharRace:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharRace:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharRace:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharRace:SetText("Race: Not Set") 
+			frmGuildWardenInfo.CharRace:SetText("Раса: Н/Д") 
 			
 			frmGuildWardenInfo.CharLeft = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharLeft:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharRace, "BOTTOMRIGHT", 0, -2)
@@ -757,7 +757,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharLeft:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharLeft:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharLeft:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharLeft:SetText("Left: NA") 	
+			frmGuildWardenInfo.CharLeft:SetText("Дата ухода: Н/Д") 	
 			
 			frmGuildWardenInfo.CharRank = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharRank:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharLeft, "BOTTOMRIGHT", 0, -2)
@@ -765,7 +765,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharRank:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharRank:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharRank:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharRank:SetText("Rank: NA") 			
+			frmGuildWardenInfo.CharRank:SetText("Звание: Н/Д") 			
 							
 			
 			
@@ -774,13 +774,13 @@ function libGuildWarden.SetupLabels()
 	 	CreateFrame("button", "GuildWardenSetMain", frmGuildWardenInfo, "UIPanelButtonTemplate")
         	    GuildWardenSetMain:SetPoint("BOTTOMLEFT", frmGuildWardenInfo, "BOTTOMLEFT", 10, 10);
                 GuildWardenSetMain:SetHeight(22);
-                GuildWardenSetMain:SetWidth(100);
-                GuildWardenSetMain:SetText("Set as Main");
+                GuildWardenSetMain:SetWidth(110);
+                GuildWardenSetMain:SetText("Сделать мейном");
                 GuildWardenSetMain:SetScript("OnClick", function(self, button)
 				
 				
 						libGuildWarden.YesNoFunction = function()
-															local Name = string.gsub(frmGuildWardenInfo.CharName:GetText(),"Name: ","");
+															local Name = string.gsub(frmGuildWardenInfo.CharName:GetText(),"Имя: ","");
 															local guildName, guildRankName, guildRankIndex = libGuildWarden.GetGuildInfo();						
 															local ID = nil;
 															ID = libGuildWarden.ReturnID(Name);							    
@@ -794,19 +794,19 @@ function libGuildWarden.SetupLabels()
 															libGuildWarden.ShowUserBox(Name);
 															libGuildWarden.SendSingalMain(ID);						
 															libGuildWardenSaveVar["Updates"]["Notes"] = date("%m/%d/%y %H.%M.%S");
-															libGuildWarden.SendText(Name .. " has been set as the main.", true);															
+															libGuildWarden.SendText(Name .. " назначен мейном", true);															
 														end;
-						libGuildWarden.ShowPopUp("This will set ".. string.gsub(frmGuildWardenInfo.CharName:GetText(),"Name: ","") .. " as the main.\nAre you sure?", "Yes", "No", true);				
+						libGuildWarden.ShowPopUp("Назначить ".. string.gsub(frmGuildWardenInfo.CharName:GetText(),"Имя: ","") .. " мейном?", "Да", "Нет", true);				
 
 							
                     end);
 	 	CreateFrame("button", "GuildWardenDeleteChar", frmGuildWardenInfo, "UIPanelButtonTemplate")
-        	    GuildWardenDeleteChar:SetPoint("BOTTOM", frmGuildWardenInfo, "BOTTOM", 0, 10);
+        	    GuildWardenDeleteChar:SetPoint("BOTTOM", frmGuildWardenInfo, "BOTTOM", 5, 10);
                 GuildWardenDeleteChar:SetHeight(22);
                 GuildWardenDeleteChar:SetWidth(100);
-                GuildWardenDeleteChar:SetText("Delete Char");
+                GuildWardenDeleteChar:SetText("Удалить");
                 GuildWardenDeleteChar:SetScript("OnClick", function(self, button)
-                    	local Name = string.gsub(frmGuildWardenInfo.CharName:GetText(),"Name: ","");
+                    	local Name = string.gsub(frmGuildWardenInfo.CharName:GetText(),"Имя: ","");
 						local guildName, guildRankName, guildRankIndex = libGuildWarden.GetGuildInfo();						
                     	--local ID = nil;
 						--ID = libGuildWarden.ReturnID(Name);							                	
@@ -827,7 +827,7 @@ function libGuildWarden.SetupLabels()
 										--libGuildWarden.YesNoText = "Delete " .. Name .. "?";	
 										libGuildWarden.SelectedMainsName = Name;
 										--StaticPopup_Show ("GuildWarden_YesNo");
-										libGuildWarden.ShowPopUp("\nDelete " .. Name .. "?", "Yes", "No", true);
+										libGuildWarden.ShowPopUp("\nУдалить " .. Name .. "?", "Да", "Нет", true);
 										return;
 									end
 								end	
@@ -837,12 +837,12 @@ function libGuildWarden.SetupLabels()
 																	end;
 									
 									libGuildWarden.SelectedMainsName = Name;
-									libGuildWarden.ShowPopUp("\nRemove alt " .. Name .. "?", "Yes", "No", true);	
+									libGuildWarden.ShowPopUp("\nУдалить " .. Name .. "?", "Да", "Нет", true);	
 									return;
 								end														
 							end
 						end
-						if (IsGuildLeader() and not libGuildWarden.GetPlayersGuildIndex(Name)) then
+						if (libGuildWarden.IsGuildLeader() and not libGuildWarden.GetPlayersGuildIndex(Name)) then
 								libGuildWarden.YesNoFunction = function() 
 																	if (frmGuildWardenInfo) then
 																		local Name = libGuildWarden.SelectedMainsName;
@@ -854,7 +854,7 @@ function libGuildWarden.SetupLabels()
 																end;																
 								
 								libGuildWarden.SelectedMainsName = Name;									
-								libGuildWarden.ShowPopUp("\nDelete " .. Name .. "?", "Yes", "No", true);
+								libGuildWarden.ShowPopUp("\nУдалить " .. Name .. "?", "Да", "Нет", true);
 								return;							
 						end					
                         					
@@ -864,7 +864,7 @@ function libGuildWarden.SetupLabels()
         	    GuildWardenNewNote:SetPoint("BOTTOMRIGHT", frmGuildWardenInfo, "BOTTOMRIGHT", -10, 10);
                 GuildWardenNewNote:SetHeight(22);
                 GuildWardenNewNote:SetWidth(100);
-                GuildWardenNewNote:SetText("New Note");
+                GuildWardenNewNote:SetText("Заметка");
                 GuildWardenNewNote:SetScript("OnClick", function(self, button)
 						local guildName, guildRankName, guildRankIndex = libGuildWarden.GetGuildInfo();
 						local ThisID = libGuildWarden.ReturnID(libGuildWarden.SelectedName);
@@ -886,14 +886,14 @@ function libGuildWarden.SetupLabels()
 																libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][altsname].Text = altsname;					
 																libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][altsname].Date = date("%m/%d/%y %H.%M.%S");
 																libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][altsname].By = UnitName("player");
-																libGuildWarden.SendText("Note Made!", true);
+																libGuildWarden.SendText("Заметка создана.", true);
 																libGuildWarden.SendSingalNotes(ThisID,  altsname);
 																libGuildWarden.SortNotesList();
 																 GuildNotes_Update();
 
 															end	
 														end;	
-						libGuildWarden.ShowPopUp("Enter Note Name Belowe","Create", "Cancel");								
+						libGuildWarden.ShowPopUp("Введите название заметки:","Добавить", "Отмена");								
 						--StaticPopup_Show ("GuildWarden_NewNote");
                     end);					
 end
@@ -901,7 +901,7 @@ function libGuildWarden.SetupRequests()
 	local tmpTableA1 = libGuildWarden.GetScanner();
 	local tmpCheck = CreateFrame("CheckButton", "GW_RequestOption", frmGuildWardenRequests, "UICheckButtonTemplate")--InterfaceOptionsCheckButtonTemplate --UICheckButtonTemplate
 			tmpCheck:SetPoint("TOPLEFT", frmGuildWardenRequests, "TOPLEFT", 7, -25);
-			_G[tmpCheck:GetName() .. "Text"]:SetText("Enable auto scan.");
+			_G[tmpCheck:GetName() .. "Text"]:SetText("Включить автосканирование");
 			tmpCheck:Show();				
 			tmpCheck:SetChecked(tmpTableA1.Enabled);
 			tmpCheck:SetScript("OnClick", function(self, button, down) 
@@ -923,11 +923,11 @@ function libGuildWarden.SetupRequests()
             
 			Slider.info = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.info:SetPoint("RIGHT", Slider, "LEFT", -5, 0)
-			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
 			Slider.info:SetJustifyH("LEFT")
 			Slider.info:SetShadowOffset(1, -1)
-			Slider.info:SetTextColor(1, 0, 0)
-			Slider.info:SetText("Auto Scan:" )       
+			Slider.info:SetTextColor(1, 1, 1)
+			Slider.info:SetText("Автосканирование:" )       
 			
 			Slider.rate = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.rate:SetPoint("TOP", Slider, "BOTTOM", 0, -5)
@@ -935,7 +935,7 @@ function libGuildWarden.SetupRequests()
 			Slider.rate:SetJustifyH("LEFT")
 			Slider.rate:SetShadowOffset(1, -1)
 			Slider.rate:SetTextColor(1, 1, 1)
-			Slider.rate:SetText("Scan every " .. tmpTableA1.Timer .. " Mins.");	     
+			Slider.rate:SetText("Каждые " .. tmpTableA1.Timer .. " мин.");	     
 --            Slider:SetValueStep(1);
             Slider:SetScript("OnValueChanged", function(self, value)
 									local Version1 = {strsplit(".",value)}
@@ -943,7 +943,7 @@ function libGuildWarden.SetupRequests()
 									tmpTableA2.Timer = Version1[1];
 									libGuildWarden.SetScanner(tmpTableA2);								
 									tmpTableA2 = libGuildWarden.GetScanner();
-									self.rate:SetText("Scan every " .. tmpTableA1.Timer .. " Mins.");
+									self.rate:SetText("Каждые " .. tmpTableA1.Timer .. " мин.");
 									if (libGuildWarden.GuildRequests) then
 										libGuildWarden.GuildRequests.Timer = tmpTableA2.Timer*60;
 										libGuildWarden.GuildRequests.runloop = false;	
@@ -963,11 +963,11 @@ function libGuildWarden.SetupRequests()
             
 			Slider.info = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.info:SetPoint("RIGHT", Slider, "LEFT", -5, 0)
-			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
 			Slider.info:SetJustifyH("LEFT")
 			Slider.info:SetShadowOffset(1, -1)
-			Slider.info:SetTextColor(1, 0, 0)
-			Slider.info:SetText("Decline:" )       
+			Slider.info:SetTextColor(1, 1, 1)
+			Slider.info:SetText("Отклонять:" )       
 			
 			Slider.rate = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.rate:SetPoint("TOP", Slider, "BOTTOM", 0, -5)
@@ -975,7 +975,7 @@ function libGuildWarden.SetupRequests()
 			Slider.rate:SetJustifyH("LEFT")
 			Slider.rate:SetShadowOffset(1, -1)
 			Slider.rate:SetTextColor(1, 1, 1)
-			Slider.rate:SetText("Decline under level " .. tmpTableA1.lowestLVL);	     
+			Slider.rate:SetText("Отклонять персонажей ниже " .. tmpTableA1.lowestLVL .. " уровня");	     
 --            Slider:SetValueStep(1);
             Slider:SetScript("OnValueChanged", function(self, value)
 									local Version1 = {strsplit(".",value)}
@@ -983,7 +983,7 @@ function libGuildWarden.SetupRequests()
 									tmpTableA2.lowestLVL = Version1[1];
 									libGuildWarden.SetScanner(tmpTableA2);
 									tmpTableA2 = libGuildWarden.GetScanner();
-									self.rate:SetText("Decline under level " .. tmpTableA2.lowestLVL);	     
+									self.rate:SetText("Отклонять персонажей ниже " .. tmpTableA2.lowestLVL .. " уровня");	     
             					end);
             
             Slider:Show();		
@@ -997,11 +997,11 @@ function libGuildWarden.SetupRequests()
             
 			Slider.info = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.info:SetPoint("RIGHT", Slider, "LEFT", -5, 0)
-			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+			Slider.info:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
 			Slider.info:SetJustifyH("LEFT")
 			Slider.info:SetShadowOffset(1, -1)
-			Slider.info:SetTextColor(1, 0, 0)
-			Slider.info:SetText("Decline DKs:" )       
+			Slider.info:SetTextColor(1, 1, 1)
+			Slider.info:SetText("Отклонять РС:" )       
 			
 			Slider.rate = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.rate:SetPoint("TOP", Slider, "BOTTOM", 0, -5)
@@ -1009,7 +1009,7 @@ function libGuildWarden.SetupRequests()
 			Slider.rate:SetJustifyH("LEFT")
 			Slider.rate:SetShadowOffset(1, -1)
 			Slider.rate:SetTextColor(1, 1, 1)
-			Slider.rate:SetText("Decline DKs under level " .. tmpTableA1.lowestDKLVL);	     
+			Slider.rate:SetText("Отклонять рыцарей смерти ниже " .. tmpTableA1.lowestDKLVL.. " уровня");	     
 --            Slider:SetValueStep(1);
             Slider:SetScript("OnValueChanged", function(self, value)
 									local Version1 = {strsplit(".",value)}
@@ -1017,7 +1017,7 @@ function libGuildWarden.SetupRequests()
 									tmpTableA2.lowestDKLVL = Version1[1];
 									libGuildWarden.SetScanner(tmpTableA2);
 									tmpTableA2 = libGuildWarden.GetScanner();
-									self.rate:SetText("Decline DKs under level " .. tmpTableA2.lowestDKLVL);	    
+									self.rate:SetText("Отклонять РС ниже " .. tmpTableA2.lowestDKLVL.. " уровня");	    
             					end);
             
             Slider:Show();	
@@ -1042,7 +1042,7 @@ function libGuildWarden.SetupRequests()
 			StatusBar.sendto:SetJustifyH("LEFT")
 			StatusBar.sendto:SetShadowOffset(1, -1)
 			StatusBar.sendto:SetTextColor(1, 1, 1)
-			StatusBar.sendto:SetText("0% (30 Mins)")
+			StatusBar.sendto:SetText("0% (30 мин)")
 
             StatusBar:Show();
 
@@ -1052,8 +1052,8 @@ function libGuildWarden.SetupRequests()
 	 	CreateFrame("button", "GuildWardenScanNow", frmGuildWardenRequests, "UIPanelButtonTemplate")
         	    GuildWardenScanNow:SetPoint("BOTTOMRIGHT", frmGuildWardenRequests, "BOTTOMRIGHT", -20, 20);
                 GuildWardenScanNow:SetHeight(22);
-                GuildWardenScanNow:SetWidth(100);
-                GuildWardenScanNow:SetText("Scan Now");
+                GuildWardenScanNow:SetWidth(110);
+                GuildWardenScanNow:SetText("Просканировать");
                 GuildWardenScanNow:SetScript("OnClick", function(self, button)						
 						libGuildWarden.GuildRequests.runloop = true;	
 						libGuildWarden.GuildRequests.runindex = 1;

@@ -343,7 +343,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString inherits="GameFontHighlightSmall" text="Show only guild members.">
+						<FontString inherits="GameFontHighlightSmall" text="Показывать только согильдийцев">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>

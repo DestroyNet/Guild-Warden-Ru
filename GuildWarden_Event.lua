@@ -98,7 +98,7 @@
                     local tmpgetGuild2 = {strsplit("<", tmpgetGuild1[1])}; 
                     local tmpgetGuild = tmpgetGuild2[2]; 
                     if (tmpgetGuild == nil) then
-                        tmpgetGuild = "No Guild";                       
+                        tmpgetGuild = "Н/Д";                       
                     end
                     if ((tmpUpdater[5] == "Elf")) then
 					

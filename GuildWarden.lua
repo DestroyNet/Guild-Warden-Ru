@@ -121,7 +121,7 @@ GuildInvite(name);
 			local mins = libGuildWarden.GuildRequests.Timer/60;
 			local Version1 = {strsplit(".",mins)}			
 			local Version2 = {strsplit(".",Settings*100)}				
-			GuildWardenStatusBarRequest.sendto:SetText(Version2[1] .. "% (" .. Version1[1] .. " Mins)")
+			GuildWardenStatusBarRequest.sendto:SetText(Version2[1] .. "% (" .. Version1[1] .. " мин.)")
 		end
 	end
 	local numApplicants = GetNumGuildApplicants();	
@@ -428,10 +428,10 @@ end
 function libGuildWarden.GetPlayerInfo(Name)
 	if (libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name]) then
 		if (not libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild) then
-			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "No Guild";
+			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "Н/Д";
 		end
 		if (libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild == "??") then
-			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "No Guild";
+			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "Н/Д";
 		end		
 		if (not libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].LVL) then
 			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].LVL = 0;
@@ -893,7 +893,7 @@ local guildCount = libGuildWarden.GetNumGuildMembers();
         	    GuildWardenAddBtn2:SetPoint("TOPLEFT", TextBoxGWRealm1, "TOPRIGHT", 10, 0);
                 GuildWardenAddBtn2:SetHeight(22);
                 GuildWardenAddBtn2:SetWidth(100);
-                GuildWardenAddBtn2:SetText("Add this char.");
+                GuildWardenAddBtn2:SetText("Добавить");
                 GuildWardenAddBtn2:SetScript("OnClick", function(self, button)
                         if (TextBoxGWRealm1) then
                             if (TextBoxGWRealm1:GetText() ~= "") then
@@ -927,13 +927,13 @@ local guildCount = libGuildWarden.GetNumGuildMembers();
         	    GuildWardenSendPing:SetPoint("BOTTOMLEFT", frmGuildWardenSharing, "BOTTOMLEFT", 10, 10);
                 GuildWardenSendPing:SetHeight(22);
                 GuildWardenSendPing:SetWidth(100);
-                GuildWardenSendPing:SetText("Send Ping");
+                GuildWardenSendPing:SetText("Пинг");
                 GuildWardenSendPing:SetScript("OnClick", function(self, button)
                 		if (libGuildWarden.TempListMain["Sender"]) then
                         	if (libGuildWarden.TempListMain["Sender"].SentPing == false and libGuildWarden.TempListMain["Sender"].Send == false) then
 								libGuildWarden.TempListMain["WardenUsers"] = {};
                     			libGuildWarden.SendMyPing();
-                    			libGuildWarden.SendText("Ping Sent", true);                        	
+                    			libGuildWarden.SendText("Пинг отправлен", true);                        	
                     		else
                     			libGuildWarden.SendText("Can't send ping right now!", true);
                     		end
@@ -954,7 +954,7 @@ local guildCount = libGuildWarden.GetNumGuildMembers();
 	 	--GuildFrame_TabClicked(GuildFrameTab1)
 		--PanelTemplates_SetTab(GuildFrame, 1);
 	 	libGuildWarden.Loaded = 2;	 	
-	 	libGuildWarden.SendText("Nice Guild", true);
+	 	--libGuildWarden.SendText("Nice Guild", true);
 
 	end
 
@@ -1076,13 +1076,13 @@ function libGuildWarden.CalSpeed(value)
 		end
 	end	
 	Size = Size/value;
-	local Type = "Secs";
+	local Type = "сек.";
 	if (Size > 60) then
 		Size = Size /60;
-		Type = "Mins";
+		Type = "мин.";
 	end
 	local Pre = strsub(tostring(Size), 1, 3); 
-	GuildWardenSliderTH.rate:SetText("Your list will take " .. Pre .. " " .. Type );
+	GuildWardenSliderTH.rate:SetText("Передача займёт " .. Pre .. " " .. Type );
 end
 function libGuildWarden.OnEnter(self, motion) 		
 		if (libGuildWarden.Loaded > 0) then	   
