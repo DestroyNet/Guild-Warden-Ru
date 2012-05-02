@@ -173,7 +173,7 @@
 					    GuildWardenStatusBarPing:SetMinMaxValues(0, 30);
 					    GuildWardenStatusBarPing.value:SetText(Pre .. "%");
 						GuildWardenStatusBarPing:SetValue(libGuildWarden.TempListMain["Sender"].Time2);
-						GuildWardenStatusBarPing.sendto:SetText("Ожидание…");
+						GuildWardenStatusBarPing.sendto:SetText("Ожидание...");
 	 				end		
 			libGuildWarden.TempListMain["Sender"].Time2 = libGuildWarden.TempListMain["Sender"].Time2 + elapsed;
 			if (libGuildWarden.TempListMain["Sender"].Time2 > 30) then

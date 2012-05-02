@@ -1,4 +1,4 @@
-﻿## Interface: 40300
+## Interface: 40300
 ## Title: Guild Warden
 ## Author: Codegreen(Freethemice) of Wildhammer
 ## Version: 3.3.3

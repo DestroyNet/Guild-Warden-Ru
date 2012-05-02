@@ -400,7 +400,7 @@ function libGuildWarden.SetupStatusBars()
 			Slider.rate:SetJustifyH("LEFT")
 			Slider.rate:SetShadowOffset(1, -1)
 			Slider.rate:SetTextColor(1, 1, 1)
-			Slider.rate:SetText("Отправка займёт 10 мин." ) 			     
+			Slider.rate:SetText("Отправка займёт 10 минут" ) 			     
 --            Slider:SetValueStep(1);
             Slider:SetScript("OnValueChanged", function(self, value)
                                 	libGuildWarden.CalSpeed(value);
@@ -466,7 +466,7 @@ function libGuildWarden.SetupStatusBars()
 			StatusBar.value:SetTextColor(0, 1, 0)
 			StatusBar.value:SetText("0%")
 			StatusBar.tooltipTitle = "Скорость отправки"
-			StatusBar.tooltipText = "Показывает отправку данных всех аддонов"
+			StatusBar.tooltipText = "показывает отправку данных всех аддонов"
 			StatusBar:SetScript("OnEnter", function(self)
 								GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 								GameTooltip:AddLine(self.tooltipTitle);          			
@@ -509,7 +509,7 @@ function libGuildWarden.SetupStatusBars()
 			StatusBar.value:SetTextColor(0, 1, 0)
 			StatusBar.value:SetText("0%")
 			StatusBar.tooltipTitle = "Скорость получения"
-			StatusBar.tooltipText = "Показывает получение данных всеми аддонами"
+			StatusBar.tooltipText = "показывает получение данных всеми аддонами"
 			StatusBar:SetScript("OnEnter", function(self)
 								GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 								GameTooltip:AddLine(self.tooltipTitle);          			
@@ -733,7 +733,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharFaction:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharFaction:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharFaction:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharFaction:SetText("Фракция: Н/Д")
+			frmGuildWardenInfo.CharFaction:SetText("Фракция: н/д")
 			
 			frmGuildWardenInfo.CharClass = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharClass:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharFaction, "BOTTOMRIGHT", 0, -2)
@@ -741,7 +741,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharClass:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharClass:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharClass:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharClass:SetText("Класс: Н/Д") 
+			frmGuildWardenInfo.CharClass:SetText("Класс: н/д")
 			 			
 			frmGuildWardenInfo.CharRace = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharRace:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharClass, "BOTTOMRIGHT", 0, -2)
@@ -749,7 +749,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharRace:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharRace:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharRace:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharRace:SetText("Раса: Н/Д") 
+			frmGuildWardenInfo.CharRace:SetText("Раса: н/д")
 			
 			frmGuildWardenInfo.CharLeft = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharLeft:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharRace, "BOTTOMRIGHT", 0, -2)
@@ -757,7 +757,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharLeft:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharLeft:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharLeft:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharLeft:SetText("Дата ухода: Н/Д") 	
+			frmGuildWardenInfo.CharLeft:SetText("Дата ухода: н/д")
 			
 			frmGuildWardenInfo.CharRank = frmGuildWardenInfo:CreateFontString(nil, "OVERLAY")
 			frmGuildWardenInfo.CharRank:SetPoint("TOPRIGHT", frmGuildWardenInfo.CharLeft, "BOTTOMRIGHT", 0, -2)
@@ -765,7 +765,7 @@ function libGuildWarden.SetupLabels()
 			frmGuildWardenInfo.CharRank:SetJustifyH("LEFT")
 			frmGuildWardenInfo.CharRank:SetShadowOffset(1, -1)
 			frmGuildWardenInfo.CharRank:SetTextColor(1, 1, 0)
-			frmGuildWardenInfo.CharRank:SetText("Звание: Н/Д") 			
+			frmGuildWardenInfo.CharRank:SetText("Звание: н/д")
 							
 			
 			
@@ -837,7 +837,7 @@ function libGuildWarden.SetupLabels()
 																	end;
 									
 									libGuildWarden.SelectedMainsName = Name;
-									libGuildWarden.ShowPopUp("\nУдалить " .. Name .. "?", "Да", "Нет", true);	
+									libGuildWarden.ShowPopUp("\nУдалить альта " .. Name .. "?", "Да", "Нет", true);	
 									return;
 								end														
 							end
@@ -935,7 +935,7 @@ function libGuildWarden.SetupRequests()
 			Slider.rate:SetJustifyH("LEFT")
 			Slider.rate:SetShadowOffset(1, -1)
 			Slider.rate:SetTextColor(1, 1, 1)
-			Slider.rate:SetText("Каждые " .. tmpTableA1.Timer .. " мин.");	     
+			Slider.rate:SetText("Сканировать каждые " .. tmpTableA1.Timer .. " минут");	     
 --            Slider:SetValueStep(1);
             Slider:SetScript("OnValueChanged", function(self, value)
 									local Version1 = {strsplit(".",value)}
@@ -943,7 +943,7 @@ function libGuildWarden.SetupRequests()
 									tmpTableA2.Timer = Version1[1];
 									libGuildWarden.SetScanner(tmpTableA2);								
 									tmpTableA2 = libGuildWarden.GetScanner();
-									self.rate:SetText("Каждые " .. tmpTableA1.Timer .. " мин.");
+									self.rate:SetText("Сканировать каждые " .. tmpTableA1.Timer .. " минут");
 									if (libGuildWarden.GuildRequests) then
 										libGuildWarden.GuildRequests.Timer = tmpTableA2.Timer*60;
 										libGuildWarden.GuildRequests.runloop = false;	
@@ -1001,7 +1001,7 @@ function libGuildWarden.SetupRequests()
 			Slider.info:SetJustifyH("LEFT")
 			Slider.info:SetShadowOffset(1, -1)
 			Slider.info:SetTextColor(1, 1, 1)
-			Slider.info:SetText("Отклонять РС:" )       
+			Slider.info:SetText("Отклонять ДК:" )
 			
 			Slider.rate = Slider:CreateFontString(nil, "OVERLAY")
 			Slider.rate:SetPoint("TOP", Slider, "BOTTOM", 0, -5)
@@ -1017,7 +1017,7 @@ function libGuildWarden.SetupRequests()
 									tmpTableA2.lowestDKLVL = Version1[1];
 									libGuildWarden.SetScanner(tmpTableA2);
 									tmpTableA2 = libGuildWarden.GetScanner();
-									self.rate:SetText("Отклонять РС ниже " .. tmpTableA2.lowestDKLVL.. " уровня");	    
+									self.rate:SetText("Отклонять ДК ниже " .. tmpTableA2.lowestDKLVL.. " уровня");
             					end);
             
             Slider:Show();	
@@ -1042,7 +1042,7 @@ function libGuildWarden.SetupRequests()
 			StatusBar.sendto:SetJustifyH("LEFT")
 			StatusBar.sendto:SetShadowOffset(1, -1)
 			StatusBar.sendto:SetTextColor(1, 1, 1)
-			StatusBar.sendto:SetText("0% (30 мин)")
+			StatusBar.sendto:SetText("0% (30 минут)")
 
             StatusBar:Show();
 

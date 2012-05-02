@@ -155,12 +155,12 @@ GuildInvite(name);
 		local WasDeclined = false;
 		local name, level, class, _, _, _, _, _, _, _, isTank, isHealer, isDamage, comment, timeSince, timeLeft = GetGuildApplicantInfo(index);
 		libGuildWarden.UpdateInfo(name, level, nil, class, nil);
-		if (tonumber(level) < tonumber(TmpTableA1.lowestLVL) and class ~= "DEATHKNIGHT") then
+		if (tonumber(level) < tonumber(TmpTableA1.lowestLVL) and class ~= "РЫЦАРЬСМЕРТИ") then
 			WasDeclined = true;
 			DeclineGuildApplicant(index);
 			libGuildWarden.SendText(name .. " was declined (to low lvl). " .. level .. ", " .. class);
 		end
-		if (tonumber(level) < tonumber(TmpTableA1.lowestDKLVL) and class == "DEATHKNIGHT") then
+		if (tonumber(level) < tonumber(TmpTableA1.lowestDKLVL) and class == "РЫЦАРЬСМЕРТИ") then
 			WasDeclined = true;
 			DeclineGuildApplicant(index);
 			libGuildWarden.SendText(name .. " was declined (to low lvl). " .. level .. ", " .. class);
@@ -383,43 +383,43 @@ function libGuildWarden.GetStatus()
 	Total = GuildMemberCountMax + GuildMemberCountUnder;
 	frmGuildWardenMainLabelMaxLVLNum:SetText(GuildMemberCountMax .. "/" .. Total);
 	
-	TypeClass = "DEATHKNIGHT";
+	TypeClass = "РЫЦАРЬСМЕРТИ";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDKNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "DRUID";
+    TypeClass = "ДРУИД";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "PRIEST";
+    TypeClass = "ЖРЕЦ";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPRNum:SetText(Amount.. "/" .. Total);
 
-    TypeClass = "PALADIN";
+    TypeClass = "ПАЛАДИН";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPANum:SetText(Amount .. "/" .. Total);
  	
-    TypeClass = "SHAMAN";
+    TypeClass = "ШАМАН";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelSNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "MAGE";
+    TypeClass = "МАГ";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelMNum:SetText(Amount .. "/" .. Total);
  	
-    TypeClass = "ROGUE";
+    TypeClass = "РАЗБОЙНИК";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelRNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "WARRIOR";
+    TypeClass = "ВОИН";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWRNum:SetText(Amount .. "/" .. Total);
  	
-    TypeClass = "WARLOCK";
+    TypeClass = "ЧЕРНОКНИЖНИК";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWLNum:SetText(Amount .. "/" .. Total);
 
-    TypeClass = "HUNTER";
+    TypeClass = "ОХОТНИК";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelHNum:SetText(Amount .. "/" .. Total);
 
@@ -429,10 +429,10 @@ end
 function libGuildWarden.GetPlayerInfo(Name)
 	if (libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name]) then
 		if (not libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild) then
-			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "Н/Д";
+			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "н/д";
 		end
 		if (libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild == "??") then
-			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "Н/Д";
+			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].Guild = "н/д";
 		end		
 		if (not libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].LVL) then
 			libGuildWardenSaveVar["PlayerInfo"][libGuildWarden.Realm][Name].LVL = 0;
@@ -850,13 +850,13 @@ local guildCount = libGuildWarden.GetNumGuildMembers();
 				
 		libGuildWarden.SetupRequests();
 		
-		libGuildWarden.MakeFrame(libGuildWarden.TabsLeading + 2, frmGuildWardenLeft, "Ушли"); 
+		libGuildWarden.MakeFrame(libGuildWarden.TabsLeading + 2, frmGuildWardenLeft, "Покинули"); 
 
 	 	GuildLeftContainer.update = GuildLeft_Update;
 		HybridScrollFrame_CreateButtons(GuildLeftContainer, "GuildLeftButtonTemplate", 0, 0, "TOPLEFT", "TOPLEFT", 0, -2, "TOP", "BOTTOM");
 		GuildLeftContainerScrollBar.doNotHide = true;
 		
-		libGuildWarden.MakeFrame(libGuildWarden.TabsLeading + 3, frmGuildWardenJoined, "Пришли"); 
+		libGuildWarden.MakeFrame(libGuildWarden.TabsLeading + 3, frmGuildWardenJoined, "Вступили"); 
 
 	 	GuildJoinedContainer.update = GuildJoined_Update;
 		HybridScrollFrame_CreateButtons(GuildJoinedContainer, "GuildJoinedButtonTemplate", 0, 0, "TOPLEFT", "TOPLEFT", 0, -2, "TOP", "BOTTOM");
@@ -1083,7 +1083,7 @@ function libGuildWarden.CalSpeed(value)
 		Type = "мин.";
 	end
 	local Pre = strsub(tostring(Size), 1, 3); 
-	GuildWardenSliderTH.rate:SetText("Передача займёт " .. Pre .. " " .. Type );
+	GuildWardenSliderTH.rate:SetText("Передача списка займёт " .. Pre .. " " .. Type );
 end
 function libGuildWarden.OnEnter(self, motion) 		
 		if (libGuildWarden.Loaded > 0) then	   

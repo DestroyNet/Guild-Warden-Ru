@@ -24,7 +24,8 @@
 
 end
 function libGuildWarden.IsGuildLeader() 
-	--[[if (libGuildWarden.MastersID) then
+	--[[
+	if (libGuildWarden.MastersID) then
 		if (libGuildWardenSaveVar["MainMyID"] == libGuildWarden.MastersID) then
 			if ( not libGuildWarden.MasterOption) then
 				libGuildWarden.MasterOption = true;
@@ -56,17 +57,20 @@ function libGuildWarden.IsGuildLeader()
 			return true;
 		end		
 	end	
-	return false;]]--
-	if CanEditOfficerNote()
-	then return true;
-	else return false;
+	return false;
+	]]--
+	if CanEditOfficerNote()	then
+		return true;
+	else
+		return false;
 	end
 end
+
 function libGuildWarden.UpdateInfo(Name, Level, Race, Class, Guild)
 	local thmpThisPlayer = {};
 
 	if (Guild == nil) then
-		Guild = "Н/Д";                       
+		Guild = "н/д";
 	end
 	if (libGuildWarden.ClassFix(Class)) then
 		Class = libGuildWarden.ClassFix(Class);
@@ -251,7 +255,7 @@ function libGuildWarden.GetGuildInfo()
 				libGuildWarden.YesNoFunction = nil;
 				libGuildWarden.ShowPopUp("Guild Warden, Couldn't get your guild's name\n from blizzard. Guild Warden is off\n type \"/reload\" to restart Guild Warden.", "Close", "Close" ,true);			 
 			end		
-			return "Н/Д", "None", 0;
+			return "н/д", "None", 0;
 			
         end
      else
@@ -260,7 +264,7 @@ function libGuildWarden.GetGuildInfo()
 			libGuildWarden.YesNoFunction = nil;
 			libGuildWarden.ShowPopUp("\nYou are not in a guild!\n Guild Warden is off until...\n You join a guild then re-log.", "Close", "Close" ,true);			 
 		end
-        return "Н/Д", "None", 0;
+        return "н/д", "None", 0;
      end
 
 end
@@ -280,19 +284,19 @@ end
 
 function libGuildWarden.GetClassFileName(Class)
 	local classnames = {
-		["Чернокнижник"] = "Warlock",
-		["Воин"] = "Warrior",
-		["Охотник"] = "Hunter",
 		["Маг"] = "Mage",
-		["Жрец"] = "Priest",
+		["Воин"] = "Warrior",
 		["Друид"] = "Druid",
 		["Паладин"] = "Paladin",
-		["Шаман"] = "Shaman",
 		["Разбойник"] = "Rogue",
 		["Разбойница"] = "Rogue",
-		["Шаманка"] = "Shaman",
-		["Охотница"] = "Hunter",
+		["Жрец"] = "Priest",
 		["Жрица"] = "Priest",
+		["Шаман"] = "Shaman",
+		["Шаманка"] = "Shaman",
+		["Охотник"] = "Hunter",
+		["Охотница"] = "Hunter",
+		["Чернокнижник"] = "Warlock",
 		["Чернокнижница"] = "Warlock",
 		["Рыцарь смерти"] = "Death knight"
 	}
@@ -665,7 +669,9 @@ function libGuildWarden.Convert24toAMPM(Time)
 			return Time .. " AM";				
 		end
 	end
-end ]]--
+end
+]]--
+
 function libGuildWarden.SaveCheckBoxs()
 	if (GW_GlobalTalkOption:GetChecked()) then
 		libGuildWardenSaveVar["Options"]["GlobalTalkOption"] = true;

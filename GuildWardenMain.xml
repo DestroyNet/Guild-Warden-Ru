@@ -13,7 +13,7 @@
     </Anchors>
 	<Layers>
 		<Layer level="ARTWORK">
-			<FontString name="$parentLabelJT" inherits="GameFontNormalSmall" text="Пришло сегодня:">
+			<FontString name="$parentLabelJT" inherits="GameFontNormalSmall" text="Вступило сегодня:">
 				<Anchors>
 					<Anchor point="BOTTOMLEFT" x="10" y="-15"/>
 				</Anchors>
@@ -30,7 +30,7 @@
 		</Layer>
 
 		<Layer level="ARTWORK">
-			<FontString name="$parentLabelLT" inherits="GameFontNormalSmall" text="Ушло сегодня:">
+			<FontString name="$parentLabelLT" inherits="GameFontNormalSmall" text="Покинуло сегодня:">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentLabelJT" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
 				</Anchors>
