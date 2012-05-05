@@ -1,4 +1,5 @@
-﻿function GuildWarden_SendTimerOnUpdate(self, elapsed)
+﻿
+function GuildWarden_SendTimerOnUpdate(self, elapsed)
 	local Rate = 15;
 	local bandwidthIn, bandwidthOut, latencyHome, latencyWorld = GetNetStats();
 	if (GuildWardenSliderTH) then

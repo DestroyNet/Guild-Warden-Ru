@@ -1,4 +1,5 @@
-﻿function GuildWarden_OnEvent(self, event, ...)
+﻿
+function GuildWarden_OnEvent(self, event, ...)
 	local arg1, arg2,arg3, arg4 = ...;
 	local guildName, guildRankName, guildRankIndex = libGuildWarden.GetGuildInfo();
 	if (event == "CHAT_MSG_GUILD") then

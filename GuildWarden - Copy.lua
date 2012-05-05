@@ -1,4 +1,5 @@
-﻿libGuildWarden = {};
+﻿
+libGuildWarden = {};
 libGuildWarden.Loaded = -2;
 libGuildWarden.TempListMain = {};
 libGuildWarden.SelectedName = nil;

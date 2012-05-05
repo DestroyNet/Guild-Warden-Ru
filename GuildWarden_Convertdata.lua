@@ -1,4 +1,5 @@
-﻿function libGuildWarden.ConvertAll()
+﻿
+function libGuildWarden.ConvertAll()
 	local guildName, guildRankName, guildRankIndex = libGuildWarden.GetGuildInfo();
 	if (MainMyID) then
 		libGuildWardenSaveVar["MainMyID"] = MainMyID;

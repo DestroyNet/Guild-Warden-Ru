@@ -1,4 +1,5 @@
-﻿function libGuildWarden.SendText(Text, SystemMsg)
+﻿
+function libGuildWarden.SendText(Text, SystemMsg)
 	if (not GW_GlobalTalkOption:GetChecked()) then
 		return;
 	end

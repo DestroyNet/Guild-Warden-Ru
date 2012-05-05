@@ -1,4 +1,5 @@
-﻿libGuildWarden = {};
+﻿
+libGuildWarden = {};
 libGuildWarden.Loaded = -2;
 libGuildWarden.TempListMain = {};
 libGuildWarden.SelectedMemeberName = nil;
@@ -377,43 +378,43 @@ function libGuildWarden.GetStatus()
 	Total = GuildMemberCountMax + GuildMemberCountUnder;
 	frmGuildWardenMainLabelMaxLVLNum:SetText(GuildMemberCountMax .. "/" .. Total);
 
-	TypeClass = "РЫЦАРЬСМЕРТИ";
+	TypeClass = "DEATHKNIGHT";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDKNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "ДРУИД";
+	TypeClass = "DRUID";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "ЖРЕЦ";
+	TypeClass = "PRIEST";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPRNum:SetText(Amount.. "/" .. Total);
 
-	TypeClass = "ПАЛАДИН";
+	TypeClass = "PALADIN";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPANum:SetText(Amount .. "/" .. Total);
  
-	TypeClass = "ШАМАН";
+	TypeClass = "SHAMAN";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelSNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "МАГ";
+	TypeClass = "MAGE";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelMNum:SetText(Amount .. "/" .. Total);
  
-	TypeClass = "РАЗБОЙНИК";
+	TypeClass = "ROGUE";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelRNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "ВОИН";
+	TypeClass = "WARRIOR";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWRNum:SetText(Amount .. "/" .. Total);
  
-	TypeClass = "ЧЕРНОКНИЖНИК";
+	TypeClass = "WARLOCK";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWLNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "ОХОТНИК";
+	TypeClass = "HUNTER";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelHNum:SetText(Amount .. "/" .. Total);
 end

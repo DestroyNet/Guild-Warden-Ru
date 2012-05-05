@@ -1,4 +1,5 @@
-﻿function GuildWarden_Load(self)
+﻿
+function GuildWarden_Load(self)
 	--libGuildWarden.Version = GetAddOnMetadata("Guild Warden", "Version")
 	SlashCmdList["GuildWarden"] = GuildWarden_List_cmd;
 	SLASH_GuildWarden1 = "/guildwarden";

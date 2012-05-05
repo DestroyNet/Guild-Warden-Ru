@@ -1,4 +1,5 @@
-﻿function libGuildWarden.TabClicked(self)
+﻿
+function libGuildWarden.TabClicked(self)
 	local tabIndex = self:GetID();
 	CloseGuildMenus();
 	PanelTemplates_SetTab(self:GetParent(), tabIndex);
