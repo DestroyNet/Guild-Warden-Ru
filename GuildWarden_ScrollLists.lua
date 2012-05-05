@@ -202,26 +202,23 @@ end
 
 function libGuildWarden.DefaultShort(TempList,a,b)
 	local CountList = TempList["CountList"];
-	if (TempList.dir == "+") then
-		sort(CountList, function(a,b)
-			if (a[TempList.sort] == b[TempList.sort]) then
+	sort(CountList, function(a,b)
+		if a[TempList.sort] == nil then a[TempList.sort] = "" end
+		if b[TempList.sort] == nil then b[TempList.sort] = "" end
+		if (a[TempList.sort] == b[TempList.sort]) then
+			if (TempList.dir == "+") then
 				return a["Name"] < b["Name"];
-			else
-				return a[TempList.sort] < b[TempList.sort];
-			end
-		end);
-	end
-
-	if (TempList.dir == "-") then
-		sort(CountList, function(a,b)
-			if (a[TempList.sort] == b[TempList.sort]) then
+			else 
 				return a["Name"] > b["Name"];
+			end;
+		else
+			if (TempList.dir == "+") then
+				return a[TempList.sort] < b[TempList.sort];
 			else
 				return a[TempList.sort] > b[TempList.sort];
 			end
-
-		end);
-	end
+		end
+	end);
 end
 
 ---------------------------------LEFT VIEW-------------------------------------
