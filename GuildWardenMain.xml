@@ -205,7 +205,23 @@
 				</Anchors>
 			</FontString>
 		</Layer>
-
+		<!-- Added to future releases (MoP) -->
+		<!--
+		<Layer level="ARTWORK">
+			<FontString name="$parentLabelWR" inherits="GameFontNormalSmall" text="Воинов:">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentLabelWL" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+				</Anchors>
+			</FontString>
+		</Layer>
+		<Layer level="ARTWORK">
+			<FontString name="$parentLabelWRNum" inherits="GameFontHighlightSmall" text="0">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentLabelWLNum" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+				</Anchors>
+			</FontString>
+		</Layer>
+		-->
 
 		<Layer level="ARTWORK">
 			<FontString name="$parentLabelATW" inherits="GameFontNormalSmall" text="Активных за неделю:">
@@ -309,7 +325,7 @@
 
     </Frames>
     <Scripts>
---      <OnLoad>self:Hide();</OnLoad>
+		--<OnLoad>self:Hide();</OnLoad>
     </Scripts>
   </Frame>
    

@@ -378,6 +378,12 @@ function libGuildWarden.GetStatus()
 	Total = GuildMemberCountMax + GuildMemberCountUnder;
 	frmGuildWardenMainLabelMaxLVLNum:SetText(GuildMemberCountMax .. "/" .. Total);
 
+	--[[ Added to future releases (MoP)
+	TypeClass = "MONK";
+	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
+	frmGuildWardenMainLabelDNum:SetText(Amount .. "/" .. Total);
+	]]--
+
 	TypeClass = "DEATHKNIGHT";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDKNum:SetText(Amount .. "/" .. Total);
@@ -475,6 +481,7 @@ function libGuildWarden.HookCally()
 			button:HookScript("OnClick",FunC) ;
 		end
 	end
+
 	--[[
 	if (WhoFrame) then
 		local buttons = WhoFrame.buttons;
@@ -945,7 +952,7 @@ function GuildWarden_OnUpdate(self, elapsed)
 						libGuildWarden.SendMyPing();
 						libGuildWarden.SendText("Пинг отправлен", true);						
 					else
-						libGuildWarden.SendText("Can't send ping right now!", true);
+						libGuildWarden.SendText("Невозможно отправить пинг прямо сейчас", true);
 					end
 				end
 			end);

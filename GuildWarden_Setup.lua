@@ -587,7 +587,7 @@ function libGuildWarden.SetUpSideBar()
 					if (tmpALTinfo.ID and tmpALTinfo.ID ~= "??") then
 						if (tmpinfo.ID and tmpinfo.ID ~= "??") then
 							libGuildWarden.YesNoFunction	= nil;
-							libGuildWarden.ShowPopUp("Both chars have Warden data \n Can't Add Sorry" , "Close", "Close", true);
+							libGuildWarden.ShowPopUp("Both chars have Warden data \n Can't Add Sorry" , "Закрыть", "Закрыть", true);
 							return;
 						else
 							--Revers what they want me to do

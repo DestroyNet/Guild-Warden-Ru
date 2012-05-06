@@ -29,12 +29,15 @@ function libGuildWarden.SendText(Text, SystemMsg)
 end
 
 function libGuildWarden.IsGuildLeader()
-	--[[
+	-- Modified by Kyne
+	-- (All people in rank officers are granted rights like at GM)
+	-- START MODIFIED
+	--[[ (disabled default right check)
 	if (libGuildWarden.MastersID) then
 		if (libGuildWardenSaveVar["MainMyID"] == libGuildWarden.MastersID) then
 			if ( not libGuildWarden.MasterOption) then
 				libGuildWarden.MasterOption = true;
-				libGuildWarden.SendText("Master!!! All Option are yours!!!");
+				libGuildWarden.SendText("Мастер!!! Тебе доступны все опции!!!");
 			end
 			return true;
 		end
@@ -66,11 +69,14 @@ function libGuildWarden.IsGuildLeader()
 	return false;
 	]]--
 
+	-- Added
 	if CanEditOfficerNote()	then
 		return true;
 	else
 		return false;
 	end
+	-- Added
+	-- END MODIFIED
 end
 
 function libGuildWarden.UpdateInfo(Name, Level, Race, Class, Guild)
@@ -103,6 +109,12 @@ function libGuildWarden.ClassFix(Class)
 	if (Class == strlower("Рыцарь смерти") or Class == strlower("Рыцарьсмерти")) then
 		return "Рыцарь смерти";
 	end
+
+	--[[ Added to future releases (MoP)
+	if (Class == strlower("Монах") or Class == strlower("Монахиня")) then
+		return "Монах";
+	end
+	]]--
 
 	if (Class == strlower("Друид")) then
 		return "Друид";
@@ -309,6 +321,8 @@ function libGuildWarden.GetClassFileName(Class)
 	local classnames = {
 		["Маг"] = "Mage",
 		["Воин"] = "Warrior",
+		--["Монах"] = "Monk", -- Added to future releases (MoP)
+		--["Монахиня"] = "Monk", -- Added to future releases (MoP)
 		["Друид"] = "Druid",
 		["Паладин"] = "Paladin",
 		["Разбойник"] = "Rogue",

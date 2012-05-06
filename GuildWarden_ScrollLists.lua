@@ -243,13 +243,13 @@ function GuildLeftButton_OnClick(self, button)
 					LeftList.Dateleft = DateEdit;
 					LeftList.Dateremoved = nil;
 					libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][libGuildWarden.NameChanger] = LeftList;
-					libGuildWarden.SendText("Date changed.");
+					libGuildWarden.SendText("Дата изменена");
 					libGuildWarden.SetLeftView();
 				else
-					libGuildWarden.SendText("Wrong Formate, Date not changed.");
+					libGuildWarden.SendText("Неправильный формат, дата не изменена");
 				end
 			end;
-			libGuildWarden.ShowPopUp("Type in date below. Formate: \n MH/DY/YR HR.MN.SC \n Example: " .. date("%m/%d/%y %H.%M.%S"), "Change Date", "Cancel", false, libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][libGuildWarden.NameChanger].Dateleft);
+			libGuildWarden.ShowPopUp("Введите дату. Формат: \n MH/DY/YR HR.MN.SC \n Пример: " .. date("%m/%d/%y %H.%M.%S"), "Изменить дату", "Отмена", false, libGuildWardenSaveVar["Left"][libGuildWarden.Realm][guildName][libGuildWarden.NameChanger].Dateleft);
 		end
 	end
 end
@@ -430,7 +430,7 @@ function GuildLeft_Update()
 					else
 						if (libGuildWarden.GetPlayerInfo(Playerinfo.Name)) then
 							if (libGuildWarden.GetPlayerInfo(Playerinfo.Name).Guild == guildName) then
-								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "н/д");
+								libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Гильдия", "н/д");
 							end
 						end
 						libGuildWarden.SetStringText(button.string3, Playerinfo.Date);
@@ -472,13 +472,13 @@ function GuildJoinedButton_OnClick(self, button)
 				if (libGuildWarden.CheckFormateDate(DateEdit)) then
 					JoinedList.Datejoined = DateEdit;
 					libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][libGuildWarden.NameChanger] = JoinedList;
-					libGuildWarden.SendText("Date changed.");
+					libGuildWarden.SendText("Дата изменена");
 					libGuildWarden.SetJoinedView();
 				else
-					libGuildWarden.SendText("Wrong Formate, Date not changed.");
+					libGuildWarden.SendText("Неправильный формат, дата не изменена");
 				end
 			end;
-			libGuildWarden.ShowPopUp("Type in date below. Formate: \n MH/DY/YR HR.MN.SC \n Example: " .. date("%m/%d/%y %H.%M.%S"), "Change Date", "Cancel", false, libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][libGuildWarden.NameChanger].Datejoined);
+			libGuildWarden.ShowPopUp("Введите дату. Формат: \n MH/DY/YR HR.MN.SC \n Пример: " .. date("%m/%d/%y %H.%M.%S"), "Изменить дату", "Отмена", false, libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][libGuildWarden.NameChanger].Datejoined);
 		end
 	end
 end
@@ -769,6 +769,7 @@ function libGuildWarden.SetBannedView()
 			columnButton.sortType = columnType;
 		end
 		]]--
+
 		columnButton.sortType = columnData.type;
 		if ( columnData.hasIcon ) then
 			haveIcon = true;
@@ -1442,7 +1443,7 @@ function GuildRealm_Update()
 					end
 				else
 					if (libGuildWarden.GetPlayerInfo(Playerinfo.Name).Guild == guildName) then
-						libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Guild", "н/д");
+						libGuildWarden.SetPlayerInfo(Playerinfo.Name, "Гильдия", "н/д");
 					end
 					libGuildWarden.SetStringText(button.string3, Playerinfo.Guild);
 					libGuildWarden.SetStringText(button.string1, Playerinfo.LVL);
@@ -1692,7 +1693,7 @@ function GuildNotesButton_OnClick(self, button)
 	else
 		if (not CanEditOfficerNote()) then
 			libGuildWarden.YesNoFunction	= nil;
-			libGuildWarden.ShowPopUp("Only officers can edit notes.", "Close", "Close", true);
+			libGuildWarden.ShowPopUp("Только офицеры могут редактировать заметки.", "Закрыть", "Закрыть", true);
 			return;
 		end
 		libGuildWarden.TempListMain["Notes"]["Selection"] = {};
@@ -1711,7 +1712,7 @@ function GuildNotesButton_OnClick(self, button)
 				libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][ThisName].Text = altsname;
 				libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][ThisName].Date = date("%m/%d/%y %H.%M.%S");
 				libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][ThisName].By = UnitName("player");
-				libGuildWarden.SendText("Note changed!", true);
+				libGuildWarden.SendText("Заметка изменена", true);
 				libGuildWardenSaveVar["Updates"]["Notes"] = date("%m/%d/%y %H.%M.%S");
 			else
 				if	(altsname == "DELETE") then
@@ -1721,7 +1722,7 @@ function GuildNotesButton_OnClick(self, button)
 					libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][ThisName] = {};
 					libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][ThisName].Removed	= date("%m/%d/%y %H.%M.%S");
 					libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID][ThisName].By = UnitName("player");
-					libGuildWarden.SendText("Note Deleted!", true);
+					libGuildWarden.SendText("Заметка удалена", true);
 				end
 			end
 			libGuildWarden.SendSingalNotes(ThisID,	ThisName);

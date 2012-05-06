@@ -72,14 +72,14 @@ function GuildWarden_OnEvent(self, event, ...)
 						if (libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID]) then
 							if (libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID].Main) then
 								libGuildWarden.SendText(libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][ThisID].Main);
-								libGuildWarden.SendText("Number of Char(s): " .. Count);
+								libGuildWarden.SendText("Персонажей: " .. Count);
 							else
-								libGuildWarden.SendText("Main Not Set");
-								libGuildWarden.SendText("Number of Char(s): " .. Count);
+								libGuildWarden.SendText("Мейн не указан");
+								libGuildWarden.SendText("Персонажей: " .. Count);
 							end
 						else
-							libGuildWarden.SendText("Main Not Set");
-							libGuildWarden.SendText("Number of Char(s): " .. Count);
+							libGuildWarden.SendText("Мейн не указан");
+							libGuildWarden.SendText("Персонажей: " .. Count);
 						end
 
 						if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID]) then

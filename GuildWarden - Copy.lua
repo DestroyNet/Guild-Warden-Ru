@@ -23,7 +23,7 @@ StaticPopupDialogs["GuildWarden_AddAlt"] = {
 				local NewID = libGuildWarden.Realm .. Mainsname .. x;
 				libGuildWarden.SetPlayerInfo(Mainsname, "TMPID", NewID);
 				libGuildWarden.SetPlayerInfo(altsname, "TMPID", NewID);
-				libGuildWarden.SendText("New ID made for " .. Mainsname .. ". ID: " .. NewID);
+				libGuildWarden.SendText("Создан новый ID для " .. Mainsname .. ". ID: " .. NewID);
 			end
 		end
 
@@ -39,9 +39,9 @@ StaticPopupDialogs["GuildWarden_AddAlt"] = {
 }
 
 StaticPopupDialogs["GuildWarden_AddBanned"] = {
-	text = "Enter reason to ban this char(s).",
-		button1 = "Ban!",
-	button2 = "Cancel",
+	text = "Введите причину бана",
+		button1 = "Забанить",
+	button2 = "Отмена",
 	OnAccept = function(self)
 		local reason = self.editBox:GetText();
 		local Mainsname = libGuildWarden.SelectedName;
@@ -75,7 +75,7 @@ function libGuildWarden.BanPlayer(Name, Reason)
 					SplitA[2] = tonumber(SplitA[2]) - 1;
 					SplitA = SplitA[1] .. "/" .. SplitA[2] .. "/" ..SplitA[3];
 					libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key].Datebanned = SplitA;
-			 		libGuildWarden.SendText(key .. " has been banned");
+			 		libGuildWarden.SendText(key .. " был(а) забанен(а)");
 			 	end
 			end
 		end
@@ -94,7 +94,7 @@ function libGuildWarden.BanPlayer(Name, Reason)
 					SplitA[2] = tonumber(SplitA[2]) - 1;
 					SplitA = SplitA[1] .. "/" .. SplitA[2] .. "/" ..SplitA[3];
 					libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key].Datebanned = SplitA;
-			 		libGuildWarden.SendText(key .. " has been banned");
+			 		libGuildWarden.SendText(key .. " был(а) забанен(а)");
 			 	end
 			end
 		end
@@ -118,7 +118,7 @@ function libGuildWarden.BanPlayer(Name, Reason)
 			SplitA = SplitA[1] .. "/" .. SplitA[2] .. "/" ..SplitA[3];			
 
 			libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][Name].Datebanned = SplitA;
-			libGuildWarden.SendText(Name .. " has been banned");
+			libGuildWarden.SendText(Name .. " был(а) забанен(а)");
 		end
 	end
 end
@@ -135,7 +135,7 @@ function libGuildWarden.RemoveBanPlayer(Name)
 				libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key] = {};
 					libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key].RemovedBy = UnitName("player");
 					libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key].Dateremoved = date("%m/%d/%y");
-			 	libGuildWarden.SendText(key .. " has been removed from banned");
+			 	libGuildWarden.SendText(key .. " удален(а) из бана списка");
 			end
 		end
 
@@ -145,7 +145,7 @@ function libGuildWarden.RemoveBanPlayer(Name)
 				libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key] = {};
 					libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key].RemovedBy = UnitName("player");
 					libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][key].Dateremoved = date("%m/%d/%y");
-				libGuildWarden.SendText(key .. " has been removed from banned");
+				libGuildWarden.SendText(key .. " удален(а) из бана списка");
 			end
 		end
 	end
@@ -158,7 +158,7 @@ function libGuildWarden.RemoveBanPlayer(Name)
 		libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][Name] = {};
 		libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][Name].RemovedBy = UnitName("player");
 		libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][Name].Dateremoved = date("%m/%d/%y");
-		libGuildWarden.SendText(Name .. " has been removed from banned");
+		libGuildWarden.SendText(Name .. " удален(а) из бан списка");
 	end
 end
 
@@ -331,43 +331,49 @@ function libGuildWarden.GetStatus()
 	Total = GuildMemberCountMax + GuildMemberCountUnder;
 	frmGuildWardenMainLabelMaxLVLNum:SetText(GuildMemberCountMax .. "/" .. Total);
 
-	TypeClass = "Рыцарь смерти";
+	--[[ Added to future releases (MoP)
+	TypeClass = "MONK";
+	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
+	frmGuildWardenMainLabelDNum:SetText(Amount .. "/" .. Total);
+	]]--
+
+	TypeClass = "DEATH KNIGHT";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDKNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Друид";
+	TypeClass = "DRUID";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
 	frmGuildWardenMainLabelDNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Жрец";
+	TypeClass = "PRIEST";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPRNum:SetText(Amount.. "/" .. Total);
 
-	TypeClass = "Паладин";
+	TypeClass = "PALADIN";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelPANum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Шаман";
+	TypeClass = "SHAMAN";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelSNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Маг";
+	TypeClass = "MAGE";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelMNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Разбойник";
+	TypeClass = "ROGUE";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelRNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Воин";
+	TypeClass = "WARRIOR";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWRNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Чернокнижник";
+	TypeClass = "WARLOCK";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelWLNum:SetText(Amount .. "/" .. Total);
 
-	TypeClass = "Охотник";
+	TypeClass = "HUNTER";
 	Amount, Total = libGuildWarden.GetStates(TypeClass, GuildMemberCountCLass)
  	frmGuildWardenMainLabelHNum:SetText(Amount .. "/" .. Total);
 end
