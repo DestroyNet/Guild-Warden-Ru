@@ -276,7 +276,7 @@ function libGuildWarden.GetStatus()
 		libGuildWarden.SetPlayerInfo(subname, "Class", subclass);
 		libGuildWarden.SetPlayerInfo(subname, "RankIndex", subrankIndex);
 		libGuildWarden.SetPlayerInfo(subname, "Guild", guildName);
-		libGuildWarden.SetPlayerInfo(subname, "Faction", UnitFactionGroup("player"));
+		libGuildWarden.SetPlayerInfo(subname, "Faction", select(2, UnitFactionGroup("player")));
 		libGuildWarden.SetPlayerInfo(subname, "Updated", date("%m/%d/%y %H.%M.%S"));
 		local joinedDate = strsplit(" ", libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined,2);
 		if (not libGuildWardenSaveVar["Joined"][libGuildWarden.Realm][guildName][subname].Datejoined) then

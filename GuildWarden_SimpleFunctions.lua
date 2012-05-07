@@ -95,7 +95,7 @@ function libGuildWarden.UpdateInfo(Name, Level, Race, Class, Guild)
 		libGuildWarden.SetPlayerInfo(Name, "Class", Class);
 		libGuildWarden.SetPlayerInfo(Name, "Guild", Guild);
 		libGuildWarden.SetPlayerInfo(Name, "Date", date("%m/%d/%y %H.%M.%S"));
-		libGuildWarden.SetPlayerInfo(Name, "Faction", UnitFactionGroup("player"));
+		libGuildWarden.SetPlayerInfo(Name, "Faction", select(2, UnitFactionGroup("player")));
 		libGuildWarden.SetPlayerInfo(Name, "Updated", date("%m/%d/%y %H.%M.%S"));
 	end
 end
@@ -930,7 +930,7 @@ function libGuildWarden.AddThisPlayer()
 	libGuildWarden.SetPlayerInfo(MyName, "Class", UnitClass("player"));
 	libGuildWarden.SetPlayerInfo(MyName, "ID", libGuildWardenSaveVar["MainMyID"]);
 	libGuildWarden.SetPlayerInfo(MyName, "Updated", date("%m/%d/%y %H.%M.%S"));
-	libGuildWarden.SetPlayerInfo(MyName, "Faction", UnitFactionGroup("player"));
+	libGuildWarden.SetPlayerInfo(MyName, "Faction", select(2, UnitFactionGroup("player")));
 end
 
 function libGuildWarden.MakeUserID(Name)
