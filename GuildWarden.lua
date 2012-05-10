@@ -37,7 +37,7 @@ function libGuildWarden.BanPlayer(Name, Reason)
 				--libGuildWarden.SendText(WhichDate);
 				if (WhichDate == DateA or WhichDate == "Equal") then
 					libGuildWarden.YesNoFunction = nil;
-					libGuildWarden.ShowPopUp("Umm... wait a second...", "Close", "Close", true);
+					libGuildWarden.ShowPopUp("Эмм... погодите секундочку...", "Закрыть", "Закрыть", true);
 					return;
 				end
 			end
@@ -48,7 +48,7 @@ function libGuildWarden.BanPlayer(Name, Reason)
 			libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][MainID].BannedBy = UnitName("player");
 			libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][MainID].BannedReason = Reason;			
 			libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][MainID].Datebanned = SplitA;
-			libGuildWarden.SendText(MainID .. " has been banned", true);
+			libGuildWarden.SendText("Персонаж " .. MainID .. " был забанен", true);
 			libGuildWardenSaveVar["Updates"]["Banned"] = date("%m/%d/%y %H.%M.%S");
 			libGuildWarden.SendSingalBanned(MainID);
 			libGuildWarden.CheckBanned();
@@ -68,7 +68,7 @@ function libGuildWarden.RemoveBanPlayer(Name)
 		libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][MainID] = {};
 		libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][MainID].RemovedBy = UnitName("player");		 
 		libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][MainID].Dateremoved = date("%m/%d/%y %H.%M.%S");
-		libGuildWarden.SendText(MainID .. " has been removed", true);
+		libGuildWarden.SendText("Персонаж " .. MainID .. " был удален из бана", true);
 		libGuildWarden.SendSingalBanned(MainID);
 	end
 	--libGuildWardenSaveVar["Updates"]["Banned"] = date("%m/%d/%y %H.%M.%S");
@@ -153,19 +153,19 @@ function GuildRequestInvites(elapsed)
 			if (tonumber(level) < tonumber(TmpTableA1.lowestLVL) and class ~= "РЫЦАРЬСМЕРТИ") then
 				WasDeclined = true;
 				DeclineGuildApplicant(index);
-				libGuildWarden.SendText(name .. " was declined (to low lvl). " .. level .. ", " .. class);
+				libGuildWarden.SendText(name .. " был отклонен (маленький уровень). " .. level .. ", " .. class);
 			end
 
 			if (tonumber(level) < tonumber(TmpTableA1.lowestDKLVL) and class == "РЫЦАРЬСМЕРТИ") then
 				WasDeclined = true;
 				DeclineGuildApplicant(index);
-				libGuildWarden.SendText(name .. " was declined (to low lvl). " .. level .. ", " .. class);
+				libGuildWarden.SendText(name .. " был отклонен (маленький уровень для ДК). " .. level .. ", " .. class);
 			end
 
 			if (libGuildWarden.IsBanned(name) == true and WasDeclined == false) then
 				WasDeclined = true;
 				DeclineGuildApplicant(index);
-				libGuildWarden.SendText(name .. " was declined (on banned list). " .. level .. ", " .. class);
+				libGuildWarden.SendText(name .. " был отклонен (в бан листе). " .. level .. ", " .. class);
 			end
 
 			if (WasDeclined == false) then
@@ -182,22 +182,22 @@ function GuildRequestInvites(elapsed)
 					libGuildWarden.YesNoFunction = nil;
 					local isTHD = "";
 					if (isTank) then
-						isTHD = isTHD .. "Tank, ";
+						isTHD = isTHD .. "Танк, ";
 					end
 
 					if (isHealer) then
-						isTHD = isTHD .. "Healer, ";
+						isTHD = isTHD .. "Лекарь, ";
 					end
 
 					if (isDamage) then
-						isTHD = isTHD .. "DPS, ";
+						isTHD = isTHD .. "Боец, ";
 					end
 
 					if (GW_InvitePopUp) then
 						if (GW_InvitePopUp:GetChecked()) then
 							local msgWindowString = comment;
 							msgWindowString = libGuildWarden.FittoWindow(msgWindowString);
-							libGuildWarden.ShowPopUp("A new person has requested to join your guild!\nName: " .. name .. " Level: " .. level .. " " .. isTHD .. "\n" .. msgWindowString, "Close", "Close", true);
+							libGuildWarden.ShowPopUp("Новый запрос на вступление в гильдию!\n Имя: " .. name .. " Уровень: " .. level .. " " .. isTHD .. "\n" .. msgWindowString, "Закрыть", "Закрыть", true);
 						end
 					end
 				end
@@ -452,7 +452,7 @@ function libGuildWarden.HookCally()
 		--CalendarViewEventInviteListScrollFrame
 		local FunC = (function(self, button)
 			if (libGuildWarden.Loaded < 1) then
-				libGuildWarden.SendText("Must Open Guild Window First", true);
+				libGuildWarden.SendText("Сначала необходимо открыть список гильдии", true);
 			else
 				local inviteIndex = self.inviteIndex
 				local name, level, className, classFilename, inviteStatus, modStatus, inviteIsMine = CalendarEventGetInvite(inviteIndex);
@@ -505,7 +505,7 @@ function GuildWarden_OnUpdate(self, elapsed)
 		if (libGuildWarden.NumGuildMembers ~= guildCount) then
 			libGuildWarden.NumGuildMembers = guildCount;
 			libGuildWarden.GetStatus();
-			libGuildWarden.SendText("Status Updated", true);
+			libGuildWarden.SendText("Статус обновлен", true);
 			libGuildWarden.CheckBanned();
 		end
 
@@ -1095,12 +1095,14 @@ function libGuildWarden.CalSpeed(value)
 			end
 		end
 	end
+
 	Size = Size/value;
 	local Type = "сек.";
 	if (Size > 60) then
 		Size = Size /60;
 		Type = "мин.";
 	end
+
 	local Pre = strsub(tostring(Size), 1, 3);
 	GuildWardenSliderTH.rate:SetText("Передача списка займёт " .. Pre .. " " .. Type );
 end
@@ -1139,6 +1141,7 @@ function libGuildWarden.HyperlinkClicked(self, linkData, link, button)
 				GuildWardenPopTextBox:SetText(SplitA[2]);
 			end
 		end
+
 		--[[
 		for i=1, 4 do
 			local StaticPopupTmp = _G["StaticPopup" .. i];

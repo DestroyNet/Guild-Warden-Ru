@@ -1471,17 +1471,17 @@ function GuildGuildSharingButton_OnClick(self, button)
 	local HavesndData = false;
 	ToShow = ToShow	.. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Name;
 	ToShow = ToShow .. "\n";
-	ToShow = ToShow	.. "Left: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Left ..
-					" Joined: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Joined ..
-					" Banned: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Banned ..
-					" Realm: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Realm ..
-					" Notes: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Notes;
+	ToShow = ToShow	.. "Покинули: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Left ..
+					" Вступили: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Joined ..
+					" Забанены: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Banned ..
+					" Мир: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Realm ..
+					" Заметки: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].Notes;
 	ToShow = ToShow .. "\n";
 
 	if (libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].RealmUpdate) then
-		ToShow = ToShow .. "Realm: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].RealmUpdate ..
-									" Banned: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].BannedUpdate ..
-									"\nNotes: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].NotesUpdate;
+		ToShow = ToShow .. "Мир: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].RealmUpdate ..
+									" Забанены: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].BannedUpdate ..
+									"\nЗаметки: " .. libGuildWarden.TempListMain["GuildSharing"]["CountList"][self.index].NotesUpdate;
 		ToShow = ToShow .. "\n";
 		HavesndData = true;
 	end

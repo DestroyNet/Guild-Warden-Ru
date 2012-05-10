@@ -291,7 +291,7 @@ function libGuildWarden.GetGuildInfo()
 			if (libGuildWarden.Loaded > 0) then
 				libGuildWarden.Loaded = -7;
 				libGuildWarden.YesNoFunction = nil;
-				libGuildWarden.ShowPopUp("Guild Warden, Couldn't get your guild's name\n from blizzard. Guild Warden is off\n type \"/reload\" to restart Guild Warden.", "Close", "Close" ,true);			
+				libGuildWarden.ShowPopUp("Guild Warden, Не удалось найти вашу гильдию на сервере.\n Guild Warden выключается,\n введите \"/reload\" для перезапуска Guild Warden.", "Закрыть", "Закрыть" ,true);			
 			end
 			return "н/д", "None", 0;
 		end
@@ -299,7 +299,7 @@ function libGuildWarden.GetGuildInfo()
 		if (libGuildWarden.Loaded > 0) then
 			libGuildWarden.Loaded = -7;
 			libGuildWarden.YesNoFunction = nil;
-			libGuildWarden.ShowPopUp("\nYou are not in a guild!\n Guild Warden is off until...\n You join a guild then re-log.", "Close", "Close" ,true);			
+			libGuildWarden.ShowPopUp("\nВы не состоите в гильдии!\n Guild Warden выключается пока...\n Вы не вступите в гиьдию и не сделаете релог.", "Закрыть", "Закрыть" ,true);			
 		end
 		return "н/д", "None", 0;
 	 end
@@ -567,15 +567,15 @@ function libGuildWarden.MasterToolTip(tmpName)
 			GameTooltip:SetOwner(WorldFrame, "ANCHOR_CURSOR");
 		end
 
-		GameTooltip:AddLine("Main: " .. HIGHLIGHT_FONT_COLOR_CODE .. Mainis .. FONT_COLOR_CODE_CLOSE);
-		GameTooltip:AddLine("Number of Char(s): " .. HIGHLIGHT_FONT_COLOR_CODE .. Count .. FONT_COLOR_CODE_CLOSE);
+		GameTooltip:AddLine("Мейн: " .. HIGHLIGHT_FONT_COLOR_CODE .. Mainis .. FONT_COLOR_CODE_CLOSE);
+		GameTooltip:AddLine("Персонажей: " .. HIGHLIGHT_FONT_COLOR_CODE .. Count .. FONT_COLOR_CODE_CLOSE);
 		if (ThisID) then
 			if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID]) then
 				if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].Datebanned) then
-					GameTooltip:AddLine("WARNING! BANNED FROM GUILD");
-					GameTooltip:AddLine("By: " .. HIGHLIGHT_FONT_COLOR_CODE .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedBy .. FONT_COLOR_CODE_CLOSE);
-					GameTooltip:AddLine("When: " .. HIGHLIGHT_FONT_COLOR_CODE .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].Datebanned .. FONT_COLOR_CODE_CLOSE);
-					GameTooltip:AddLine("Reason: " .. HIGHLIGHT_FONT_COLOR_CODE .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedReason .. FONT_COLOR_CODE_CLOSE);
+					GameTooltip:AddLine("ПРЕДУПРЕЖДЕНИЕ! ЗАБАНЕН В ГИЛЬДИИ!");
+					GameTooltip:AddLine("Забанил: " .. HIGHLIGHT_FONT_COLOR_CODE .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedBy .. FONT_COLOR_CODE_CLOSE);
+					GameTooltip:AddLine("Дата: " .. HIGHLIGHT_FONT_COLOR_CODE .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].Datebanned .. FONT_COLOR_CODE_CLOSE);
+					GameTooltip:AddLine("Причина: " .. HIGHLIGHT_FONT_COLOR_CODE .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedReason .. FONT_COLOR_CODE_CLOSE);
 				end
 			end
 		end
@@ -697,13 +697,13 @@ function libGuildWarden.SetCheckBoxs()
 		local tmpTableA1 = libGuildWarden.GetScanner();
 		GW_RequestOption:SetChecked(tmpTableA1.Enabled);
 		GuildWardenSliderRequestLevel:SetValue(tmpTableA1.lowestLVL);
-		GuildWardenSliderRequestLevel.rate:SetText("Decline under level " .. tmpTableA1.lowestLVL);		
+		GuildWardenSliderRequestLevel.rate:SetText("Отклонять если уровень ниже " .. tmpTableA1.lowestLVL);		
 
 		GuildWardenSliderRequestDKLevel:SetValue(tmpTableA1.lowestDKLVL);
-		GuildWardenSliderRequestDKLevel.rate:SetText("Decline DKs under level " .. tmpTableA1.lowestDKLVL);		
+		GuildWardenSliderRequestDKLevel.rate:SetText("Отклонять ДК если уровень ниже " .. tmpTableA1.lowestDKLVL);		
 
 		GuildWardenSliderRequest:SetValue(tmpTableA1.Timer);
-		GuildWardenSliderRequest.rate:SetText("Scan every " .. tmpTableA1.Timer .. " Mins.");
+		GuildWardenSliderRequest.rate:SetText("Сканировать каждые " .. tmpTableA1.Timer .. " минут.");
 	end
 end
 
@@ -833,7 +833,7 @@ function libGuildWarden.ShowPopUp(Message, YesText, NoText, HideTextBox, TextBox
 	end
 
 	if (not NoText) then
-		NoText = "Cancel";
+		NoText = "Отмена";
 	end
 
 	if (HideTextBox) then
@@ -867,12 +867,12 @@ end
 function libGuildWarden.ShowBan(hisID, subname)
 	local guildName, guildRankName, guildRankIndex = libGuildWarden.GetGuildInfo();
 	PlaySound("RaidWarning");
-	libGuildWarden.SendText("BANNED GUILDIE: " .. subname .. " IS IN THE GUILD!!!!!");
-	libGuildWarden.SendText("BANNED By: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].BannedBy);
-	libGuildWarden.SendText("BANNED Date: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].Datebanned);
+	libGuildWarden.SendText("Забаненые согильдийцы: " .. subname .. " находится в гильдии!!!");
+	libGuildWarden.SendText("Забанил: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].BannedBy);
+	libGuildWarden.SendText("Дата бана: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].Datebanned);
 	libGuildWarden.SendText(libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].BannedReason);
 	libGuildWarden.YesNoFunction = nil;
-	libGuildWarden.ShowPopUp("BANNED GUILDIE: " .. subname .. " IS IN THE GUILD!!!!!\n" .. "BANNED By: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].BannedBy .."\n" .. "BANNED Date: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].Datebanned .. "\n" ..	libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].BannedReason, "Close", "Close" ,true);
+	libGuildWarden.ShowPopUp("Забаненые согильдийцы: " .. subname .. " находится в гильдии!!!\n" .. "Забанил: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].BannedBy .."\n" .. "Дата бана: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].Datebanned .. "\n" ..	libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][hisID].BannedReason, "Закрыть", "Закрыть" ,true);
 end
 
 function libGuildWarden.MakeFrame(Index, Frame, Text)
@@ -940,7 +940,7 @@ function libGuildWarden.MakeUserID(Name)
 	libGuildWarden.SetPlayerInfo(Name, "TMPID", NewID);
 	libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][NewID] = {};
 	libGuildWardenSaveVar["Notes"][libGuildWarden.Realm][guildName][NewID].Main = Name;
-	libGuildWarden.SendText("New ID made for " .. Name .. ". ID: " .. NewID, true);
+	libGuildWarden.SendText("Создан новый ID для " .. Name .. ". ID: " .. NewID, true);
 	libGuildWarden.SendSingalPlayer(Name);
 	libGuildWarden.SendSingalMain(NewID);
 	return NewID;

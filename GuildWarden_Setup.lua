@@ -156,33 +156,33 @@ function GuildWarden_OptionsLoad(panel)
 
 	CreateFrame("CheckButton", "GW_MouseOverOption", panel, "UICheckButtonTemplate")--InterfaceOptionsCheckButtonTemplate --UICheckButtonTemplate
 		GW_MouseOverOption:SetPoint("TOPLEFT", GW_ThrotalOption, "BOTTOMLEFT", 0, 5);
-		GW_MouseOverOptionText:SetText("Let me show mouse over tooltips.");
+		GW_MouseOverOptionText:SetText("Показывать подсказку при наведении курсора?");
 		GW_MouseOverOption:Show();
 		GW_MouseOverOption:SetChecked(true);
 
 	CreateFrame("CheckButton", "GW_guildMOTDOption", panel, "UICheckButtonTemplate")--InterfaceOptionsCheckButtonTemplate --UICheckButtonTemplate
 		GW_guildMOTDOption:SetPoint("TOPLEFT", GW_MouseOverOption, "BOTTOMLEFT", 0, 5);
-		GW_guildMOTDOptionText:SetText("Show Guild Message of the Day when I first log-in.");
+		GW_guildMOTDOptionText:SetText("Показывать Сообщение Дня от гильдии при первом входе?");
 		GW_guildMOTDOption:Show();
 		GW_guildMOTDOption:SetChecked(true);
 
 	CreateFrame("CheckButton", "GW_OfficersOption", panel, "UICheckButtonTemplate")--InterfaceOptionsCheckButtonTemplate --UICheckButtonTemplate
 		GW_OfficersOption:SetPoint("TOPLEFT", GW_guildMOTDOption, "BOTTOMLEFT", 0, 5);
-		GW_OfficersOptionText:SetText("Only officers can read notes. (GM Only)");
+		GW_OfficersOptionText:SetText("Только офицеры могут читать заметки. (GM Only)");
 		GW_OfficersOption:Show();
 		GW_OfficersOption:SetChecked(true);
 		GW_OfficersOption:Disable()
 
 	CreateFrame("CheckButton", "GW_AutoInviteOption", panel, "UICheckButtonTemplate")--InterfaceOptionsCheckButtonTemplate --UICheckButtonTemplate
 		GW_AutoInviteOption:SetPoint("TOPLEFT", GW_OfficersOption, "BOTTOMLEFT", 0, 5);
-		GW_AutoInviteOptionText:SetText("Only Guild Master can edit auto invite options. (GM Only)");
+		GW_AutoInviteOptionText:SetText("Только Глава Гильдии может редактировать настройки авто-приема. (GM Only)");
 		GW_AutoInviteOption:Show();
 		GW_AutoInviteOption:SetChecked(true);
 		GW_AutoInviteOption:Disable()
 
 	CreateFrame("CheckButton", "GW_InvitePopUp", panel, "UICheckButtonTemplate")--InterfaceOptionsCheckButtonTemplate --UICheckButtonTemplate
 		GW_InvitePopUp:SetPoint("TOPLEFT", GW_AutoInviteOption, "BOTTOMLEFT", 0, 5);
-		GW_InvitePopUpText:SetText("Show message box when someone new request to join the guild.");
+		GW_InvitePopUpText:SetText("Показывать текстовое сообщение когда кто-то подает запрос в гильдию?");
 		GW_InvitePopUp:Show();
 		GW_InvitePopUp:SetChecked(true);
 end
@@ -651,7 +651,7 @@ function libGuildWarden.SetUpSideBar()
 				libGuildWarden.YesNoFunction = function()
 					libGuildWarden.RemoveBanPlayer(libGuildWarden.SelectedMainsName);
 				end;
-				libGuildWarden.ShowPopUp("Remove ban on \n" ..libGuildWarden.SelectedMainsName .. "\nIf you do, you can't not ban again for 2 days", "Remove!", "Cancel", true);
+				libGuildWarden.ShowPopUp("Снять бан с \n" ..libGuildWarden.SelectedMainsName .. "\nЕсли вы это сделаете, вы не сможете забанить его еще раз в течение 2 дней", "Удалить!", "Отмена", true);
 			end
 		end);
 
@@ -1018,7 +1018,7 @@ function libGuildWarden.SetupRequests()
 			Slider.rate:SetJustifyH("LEFT")
 			Slider.rate:SetShadowOffset(1, -1)
 			Slider.rate:SetTextColor(1, 1, 1)
-			Slider.rate:SetText("Отклонять рыцарей смерти ниже " .. tmpTableA1.lowestDKLVL.. " уровня");
+			Slider.rate:SetText("Отклонять ДК ниже " .. tmpTableA1.lowestDKLVL.. " уровня");
 			--Slider:SetValueStep(1);
 			Slider:SetScript("OnValueChanged", function(self, value)
 				local Version1 = {strsplit(".",value)}

@@ -212,7 +212,7 @@ function GuildWarden_SendTimerOnUpdate(self, elapsed)
 							BarSettings:SetMinMaxValues(0, 100);
 							BarSettings:SetValue(0);
 							BarSettings.value:SetText("0%");
-							BarSettings.sendto:SetText("Free to Receive...");
+							BarSettings.sendto:SetText("Готов к получению...");
 	 					end
 
 						libGuildWarden.TempListMain["Sender"]["INeed" .. index] = nil;
@@ -234,7 +234,7 @@ function GuildWarden_SendTimerOnUpdate(self, elapsed)
 			local tmpTime = libGuildWarden.TempListMain["Sender"].AutoTimer / 60;
 			tmpTime = (15 - tmpTime);
 			tmpTime = strsub(tostring(tmpTime), 1, 4);
-			GuildWardenStatusUpdate1.value:SetText(Pre .. "% " .. tmpTime .. " Mins");
+			GuildWardenStatusUpdate1.value:SetText(Pre .. "% " .. tmpTime .. " минут");
 			GuildWardenStatusUpdate1:SetValue(libGuildWarden.TempListMain["Sender"].AutoTimer);
 		end
 
@@ -504,7 +504,7 @@ function libGuildWarden.SendAddonMessage(Id, Text, Type, target)
 					libGuildWarden.LastHelpConfirmed[Text] = true;
 					if (GW_SinkOption:GetChecked()) then
 						libGuildWarden.YesNoFunction	= nil;
-						libGuildWarden.ShowPopUp("\nCan't Sink Data From: " .. target .. "\n list: " ..Text .. "\nTries: " .. libGuildWarden.LastHelpNeed[Text].Count , "Close", "Close", true);
+						libGuildWarden.ShowPopUp("\nНемогу синхронизировать данные с : " .. target .. "\n Список: " ..Text .. "\nПопыток: " .. libGuildWarden.LastHelpNeed[Text].Count , "Закрыть", "Закрыть", true);
 					end
 				end
 				return;

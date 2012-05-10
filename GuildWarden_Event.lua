@@ -50,7 +50,7 @@ function GuildWarden_OnEvent(self, event, ...)
 				libGuildWarden.UpdateInfo(name, level, nil, class, nil);
 				if (name == tmpName) then
 					DeclineGuildApplicant(index);
-					libGuildWarden.SendText(name .. " was declined (in a guild). " .. level .. ", " .. class);
+					libGuildWarden.SendText(name .. " был отклонен (состоит в гильдии). " .. level .. ", " .. class);
 				end
 			end
 		end
@@ -84,10 +84,10 @@ function GuildWarden_OnEvent(self, event, ...)
 
 						if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID]) then
 							if (libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].Datebanned) then
-								libGuildWarden.SendText("WARNING! BANNED FROM GUILD");
-								libGuildWarden.SendText("By: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedBy);
-								libGuildWarden.SendText("When: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].Datebanned);
-								libGuildWarden.SendText("Reason: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedReason);
+								libGuildWarden.SendText("ПРЕДУПРЕЖДЕНИЕ! ЗАБАНЕН В ГИЛЬДИИ!");
+								libGuildWarden.SendText("Забанен: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedBy);
+								libGuildWarden.SendText("Дата: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].Datebanned);
+								libGuildWarden.SendText("Причина: " .. libGuildWardenSaveVar["Banned"][libGuildWarden.Realm][guildName][ThisID].BannedReason);
 							end
 						end
 					end
@@ -141,7 +141,7 @@ function GuildWarden_OnEvent(self, event, ...)
 							-- because the loop is one less
 							libGuildWarden.GuildRequests.runindex = libGuildWarden.GuildRequests.runindex - 1;
 						end
-						libGuildWarden.SendText(name .. " was declined (He declined the invite!). " .. level .. ", " .. class);
+						libGuildWarden.SendText(name .. " был отклонен (Он отменил приглашение!). " .. level .. ", " .. class);
 					end
 				end
 				--libGuildWarden.SendText(tmpName[1] .. "WHAT!!!");
@@ -298,7 +298,7 @@ function GuildWarden_OnEvent(self, event, ...)
 							if (index == 9 and libGuildWarden.UpdatedWarning == false) then
 								if (libGuildWarden.CheckVersion(SplitMYPing[index], SplitGWPing[index])) then
 									libGuildWarden.YesNoFunction  = nil;
-									libGuildWarden.ShowPopUp("\nIt's very important to keep Guild Warden \nup-to date! You have version (" .. SplitMYPing[index] .. ")\nNew version out " .. SplitGWPing[index] .. ". From: " .. arg4, "Close", "Close", true);
+									libGuildWarden.ShowPopUp("\nВажно иметь актуальную версию Guild Warden!\n Ваша версия (" .. SplitMYPing[index] .. ")\nНовая версия " .. SplitGWPing[index] .. ". От: " .. arg4, "Закрыть", "Закрыть", true);
 
 									--libGuildWarden.SendText("(" .. SplitMYPing[index] .. ") New version out " .. SplitGWPing[index] .. ". From: " .. arg4);
 									libGuildWarden.UpdatedWarning = true;
@@ -351,7 +351,7 @@ function GuildWarden_OnEvent(self, event, ...)
 		if (arg1 == "GW-Notes" and arg4 ~= MyName) then
 			--This is outdated from 3.3.1 and under...
 			if (not libGuildWarden.IsGuildLeader()) then
-				libGuildWarden.SendText("Your Guild Master has an outdated Guild Warden, lol!");
+				libGuildWarden.SendText("Ваш Глава Гильдии использует устаревший Guild Warden, лол!");
 			end
 		end
 
@@ -683,7 +683,7 @@ function GuildWarden_OnEvent(self, event, ...)
 					BarSettings:SetMinMaxValues(0, 100);
 					BarSettings:SetValue(0);
 					BarSettings.value:SetText("0%");
-					BarSettings.sendto:SetText("Free to Receive...");
+					BarSettings.sendto:SetText("Готов к получению...");
 					if (libGuildWarden.TempListMain["Sender"]["INeed" .. SplitGWList[2]].UpdateName and libGuildWarden.TempListMain["Sender"]["INeed" .. SplitGWList[2]].UpdateDate) then
 						libGuildWardenSaveVar["Updates"][libGuildWarden.TempListMain["Sender"]["INeed" .. SplitGWList[2]].UpdateName] = libGuildWarden.TempListMain["Sender"]["INeed" .. SplitGWList[2]].UpdateDate;
 					end
@@ -1025,6 +1025,6 @@ function GuildWarden_OnEvent(self, event, ...)
 		RegisterAddonMessagePrefix("GW-HelpNo");
 
 		libGuildWarden.Loaded = 0;
-		libGuildWarden.SendText("Hello!", true);
+		libGuildWarden.SendText("Привет!", true);
 	end
 end
